@@ -43,7 +43,13 @@ jobs:
         env:
           BASE_PATH: /${{ github.event.repository.name }}/
 
+      # enablement:true lets the workflow turn Pages on itself (source = Actions).
+      # Without it the first run fails with "Get Pages site failed ... Not Found"
+      # until someone flips the switch in Settings → Pages by hand.
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

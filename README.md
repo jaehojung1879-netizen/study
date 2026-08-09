@@ -350,7 +350,9 @@ law-sources.json → check-law-updates.ts → 변경 감지
 
 ## GitHub Pages 배포
 
-1. 저장소 **Settings → Pages → Source**를 **GitHub Actions**로 설정한다.
+1. 별도 설정이 필요 없다. 워크플로의 `actions/configure-pages`가 `enablement: true`로
+   Pages를 직접 켠다(Source = GitHub Actions). 조직 정책 등으로 자동 활성화가 막혀 있다면
+   저장소 **Settings → Pages → Source**를 **GitHub Actions**로 한 번만 설정하면 된다.
 2. **기본 브랜치**에 push하면 `.github/workflows/deploy.yml`이 실행된다.
    lint → typecheck → test → 문제은행 검증 → 중복 검사 → build 순으로 진행되며,
    **하나라도 실패하면 배포되지 않는다.**
