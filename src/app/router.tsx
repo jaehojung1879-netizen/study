@@ -8,6 +8,8 @@ import { WeaknessPage } from '../features/weakness/WeaknessPage';
 import { MockPage } from '../features/mock/MockPage';
 import { MockRunPage } from '../features/mock/MockRunPage';
 import { QuestionsPage } from '../features/questions/QuestionsPage';
+import { NotesPage } from '../features/notes/NotesPage';
+import { ConceptNotePage } from '../features/notes/ConceptNotePage';
 import { UpdatesPage } from '../features/updates/UpdatesPage';
 import { SettingsPage } from '../features/settings/SettingsPage';
 
@@ -24,6 +26,8 @@ export const routes: RouteObject[] = [
       { path: 'mock', element: <MockPage /> },
       { path: 'mock/:sessionId', element: <MockRunPage /> },
       { path: 'questions', element: <QuestionsPage /> },
+      { path: 'notes', element: <NotesPage /> },
+      { path: 'notes/:conceptId', element: <ConceptNotePage /> },
       { path: 'updates', element: <UpdatesPage /> },
       { path: 'settings', element: <SettingsPage /> },
       { path: '*', element: <Navigate to="/" replace /> },

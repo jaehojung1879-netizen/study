@@ -5,7 +5,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-sale",
-    "conceptIds": ["c-earnest-money"],
+    "conceptIds": [
+      "c-earnest-money"
+    ],
     "question": "甲이 乙에게 X부동산을 10억원에 매도하면서 계약금 1억원을 받았다. 이에 관한 설명으로 옳지 않은 것은? (다른 약정은 없음)",
     "choices": [
       "계약금은 특약이 없는 한 해약금으로 추정된다",
@@ -16,13 +18,25 @@
     ],
     "answer": 4,
     "explanation": "민법 제565조에 따라 매도인이 해약금 해제를 하려면 계약금 배액을 '상환'해야 하며, 판례는 현실의 제공(이행제공)까지 필요하고 단순한 의사표시만으로는 해제의 효력이 없다고 본다. ④의 '이행의 착수'는 중도금 지급 등이 대표적이다.",
+    "choiceExplanations": [
+      "옳다. 제565조에 따라 계약금은 특약이 없는 한 해약금으로 추정된다.",
+      "옳다. 매수인은 지급한 계약금을 포기하고 해제할 수 있다.",
+      "옳다. 매도인은 계약금의 배액을 상환하고 해제할 수 있다.",
+      "옳다. 당사자 일방이 이행에 착수한 후에는 해약금 해제를 할 수 없다. 중도금 지급이 대표적이다.",
+      "틀렸다(정답). 판례는 배액의 현실적 이행제공이 있어야 해제의 효력이 생기고, 의사표시만으로는 부족하다고 본다."
+    ],
     "memoryTip": "해약금 해제 = 매수인은 포기, 매도인은 배액 '상환'(제공까지 필요), 이행착수 전까지만",
     "trap": "'배액을 상환하고'라는 문구를 '의사표시만으로'로 바꾸는 선지가 단골이다.",
     "difficulty": 3,
     "questionType": "case",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제565조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제565조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -33,7 +47,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-general",
-    "conceptIds": ["c-rescission"],
+    "conceptIds": [
+      "c-rescission"
+    ],
     "question": "계약해제에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "이행지체를 이유로 해제하려면 원칙적으로 상당한 기간을 정하여 최고하여야 한다",
@@ -44,13 +60,25 @@
     ],
     "answer": 4,
     "explanation": "민법 제548조 제1항 단서는 해제로 인한 원상회복이 제3자의 권리를 해하지 못한다고 규정하며, 판례는 해제 전에 등기를 갖춘 제3자는 선의·악의를 불문하고 보호된다고 본다(해제 후 제3자는 선의여야 보호). 나머지는 제543조 이하의 내용이다.",
+    "choiceExplanations": [
+      "옳다. 제544조에 따라 이행지체 해제에는 원칙적으로 상당한 기간을 정한 최고가 필요하다.",
+      "옳다. 제546조에 따라 이행불능이면 최고 없이 즉시 해제할 수 있다.",
+      "옳다. 제543조 제2항으로, 해제의 의사표시는 철회하지 못한다.",
+      "옳다. 제548조 제1항 본문으로, 해제되면 각 당사자는 원상회복의무를 진다.",
+      "틀렸다(정답). 제548조 제1항 단서에 따라 원상회복은 제3자의 권리를 해하지 못하므로, 해제 전에 등기를 갖춘 제3자에게는 대항할 수 없다."
+    ],
     "memoryTip": "해제 전 제3자 = 선악 불문 보호 / 해제 후 제3자 = 선의만 보호",
     "trap": "'제3자'가 해제 전인지 후인지 시점을 표시하지 않으면 반드시 틀린다.",
     "difficulty": 4,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제543조·제544조·제546조·제548조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제543조·제544조·제546조·제548조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -61,7 +89,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-general",
-    "conceptIds": ["c-risk-bearing"],
+    "conceptIds": [
+      "c-risk-bearing"
+    ],
     "question": "쌍무계약의 위험부담에 관한 설명으로 옳은 것은?",
     "choices": [
       "당사자 쌍방의 책임 없는 사유로 이행이 불가능해진 경우 채무자는 상대방의 이행을 청구할 수 있다",
@@ -72,13 +102,25 @@
     ],
     "answer": 3,
     "explanation": "민법 제537조는 채무자위험부담주의를 원칙으로 하여, 쌍방의 책임 없는 사유로 이행이 불가능해지면 채무자는 반대급부를 청구하지 못한다고 규정한다. 다만 제538조에 따라 채권자의 책임 있는 사유 또는 채권자 수령지체 중의 이행불능이면 채무자가 반대급부를 청구할 수 있다(②⑤가 틀린 이유).",
+    "choiceExplanations": [
+      "틀렸다. 쌍방 무책임이면 채무자는 상대방의 이행(반대급부)을 청구할 수 없다.",
+      "틀렸다. 채권자의 책임 있는 사유로 이행이 불가능해지면 채무자는 반대급부를 청구할 수 있다(제538조).",
+      "틀렸다. 우리 민법은 채무자위험부담주의를 원칙으로 한다.",
+      "옳다(정답). 제537조의 채무자위험부담주의로, 쌍방 무책임이면 채무자는 반대급부를 청구하지 못한다.",
+      "틀렸다. 채권자 수령지체 중의 이행불능은 제538조에 따라 채권자가 위험을 부담한다."
+    ],
     "memoryTip": "원칙 = 채무자위험부담(제537조) / 예외 = 채권자 귀책·수령지체 시 채권자부담(제538조)",
     "trap": "'채권자주의가 원칙'이라는 선지는 항상 오답이다. 우리 민법의 원칙은 채무자주의이다.",
     "difficulty": 4,
     "questionType": "statute",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제537조·제538조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제537조·제538조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -89,7 +131,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-general",
-    "conceptIds": ["c-simultaneous-performance"],
+    "conceptIds": [
+      "c-simultaneous-performance"
+    ],
     "question": "동시이행의 항변권에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "쌍무계약에서 상대방이 채무의 이행을 제공할 때까지 자기 채무의 이행을 거절할 수 있는 권리이다",
@@ -100,13 +144,25 @@
     ],
     "answer": 4,
     "explanation": "동시이행의 항변권은 당사자가 원용해야 비로소 고려되는 항변권이므로 법원이 직권으로 판단하지 않는다. 원용하면 원고 전부승소가 아니라 상환이행판결(동시이행판결)이 내려진다. ③④는 판례가 인정하는 대표적 동시이행관계이다.",
+    "choiceExplanations": [
+      "옳다. 제536조의 정의 그대로다.",
+      "옳다. 항변권이 있는 동안에는 이행하지 않아도 이행지체 책임을 지지 않는다.",
+      "옳다. 판례는 해제로 인한 쌍방의 원상회복의무를 동시이행관계로 본다.",
+      "옳다. 임대차 종료 시 목적물 반환의무와 보증금 반환의무도 동시이행관계다.",
+      "틀렸다(정답). 동시이행항변권은 당사자가 원용해야 고려되며, 원용하면 상환이행판결이 내려진다."
+    ],
     "memoryTip": "동시이행 항변권 = 원용해야 고려 → 상환이행판결",
     "trap": "'직권으로 고려한다'는 서술은 소멸시효 항변 등과 마찬가지로 오답이다.",
     "difficulty": 3,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제536조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제536조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -117,7 +173,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-sale",
-    "conceptIds": ["c-warranty"],
+    "conceptIds": [
+      "c-warranty"
+    ],
     "question": "매도인의 담보책임에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "권리의 전부가 타인에게 속하여 이전할 수 없는 경우 선의의 매수인은 손해배상을 청구할 수 있다",
@@ -128,13 +186,25 @@
     ],
     "answer": 3,
     "explanation": "매도인의 담보책임은 매매계약의 유상성에 기초한 법정 무과실책임이므로 매도인의 고의·과실을 요구하지 않는다. ⑤는 민법 제584조의 내용이고, ③은 제582조의 제척기간이다.",
+    "choiceExplanations": [
+      "옳다. 제570조에 따라 권리의 전부가 타인에게 속한 경우 선의의 매수인은 손해배상을 청구할 수 있다.",
+      "옳다. 제580조에 따라 선의·무과실의 매수인이 하자담보책임을 물을 수 있다.",
+      "옳다. 제582조의 제척기간으로, 안 날부터 6개월 내에 행사해야 한다.",
+      "틀렸다(정답). 담보책임은 매매의 유상성에 기초한 법정 무과실책임이므로 고의·과실을 요건으로 하지 않는다.",
+      "옳다. 제584조로, 배제 특약이 있어도 알면서 고지하지 않은 사실에는 책임을 면하지 못한다."
+    ],
     "memoryTip": "담보책임 = 법정 무과실책임 / 하자담보는 안 날로부터 6개월",
     "trap": "'무과실책임'을 '과실책임'으로 바꾸는 선지가 반복 출제된다.",
     "difficulty": 3,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제570조·제580조·제582조·제584조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제570조·제580조·제582조·제584조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -145,7 +215,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-lease",
-    "conceptIds": ["c-lease-cost-claim"],
+    "conceptIds": [
+      "c-lease-cost-claim"
+    ],
     "question": "임차인의 비용상환청구권에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "임차인이 필요비를 지출한 때에는 임대인에게 즉시 그 상환을 청구할 수 있다",
@@ -156,13 +228,25 @@
     ],
     "answer": 4,
     "explanation": "민법 제626조의 비용상환청구권 규정은 임의규정이므로 이를 포기하는 특약도 유효하다는 것이 판례이다(강행규정인 부속물매수청구권과 구별된다). ④는 제654조·제617조의 6개월 제척기간이다.",
+    "choiceExplanations": [
+      "옳다. 제626조 제1항에 따라 필요비는 지출 즉시 상환을 청구할 수 있다.",
+      "옳다. 제626조 제2항에 따라 유익비는 종료 시 가액 증가가 현존한 경우에 청구할 수 있다.",
+      "옳다. 유익비에서 지출액과 증가액 중 선택하는 것은 임대인(회복자)이다.",
+      "옳다. 제654조가 준용하는 제617조의 6개월 제척기간이다.",
+      "틀렸다(정답). 제626조는 임의규정이므로 비용상환청구권을 포기하는 특약도 유효하다는 것이 판례다."
+    ],
     "memoryTip": "비용상환청구권 = 임의규정(포기특약 유효) / 부속물매수청구권 = 강행규정(포기특약 무효)",
     "trap": "'임차인에게 불리하면 무조건 무효'라는 도식은 통하지 않는다. 어느 조문이 강행규정인지로 판단한다.",
     "difficulty": 4,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제626조·제646조·제652조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제626조·제646조·제652조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -173,7 +257,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-lease",
-    "conceptIds": ["c-sublease"],
+    "conceptIds": [
+      "c-sublease"
+    ],
     "question": "임차권의 양도와 전대에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "임차인은 임대인의 동의 없이 임차권을 양도하거나 전대하지 못한다",
@@ -184,13 +270,25 @@
     ],
     "answer": 4,
     "explanation": "판례는 임차인의 무단 전대라도 임대인에 대한 배신행위라고 볼 수 없는 특별한 사정(가족에게 일부를 사용하게 한 경우 등)이 있으면 임대인의 해지권이 제한된다고 본다. ②는 무단전대라도 당사자 사이에서는 채권계약으로서 유효하다는 점, ④는 제630조의 내용이다.",
+    "choiceExplanations": [
+      "옳다. 제629조 제1항으로, 임대인의 동의 없이 양도·전대하지 못한다.",
+      "옳다. 무단전대라도 임차인과 전차인 사이의 채권계약 자체는 유효하다.",
+      "옳다. 제629조 제2항에 따라 임대인은 원칙적으로 계약을 해지할 수 있다.",
+      "옳다. 제630조에 따라 동의 있는 전대의 전차인은 임대인에게 직접 의무를 진다.",
+      "틀렸다(정답). 배신행위라고 볼 수 없는 특별한 사정이 있으면 임대인의 해지권이 제한된다는 것이 판례다."
+    ],
     "memoryTip": "무단전대 → 원칙 해지 가능, 단 '배신행위가 아닌 특별한 사정'이 있으면 해지 제한",
     "trap": "'언제나', '항상'이 들어간 선지는 판례의 예외 법리를 지운 것이라 대개 오답이다.",
     "difficulty": 4,
     "questionType": "precedent",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제629조·제630조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제629조·제630조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -201,7 +299,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-general",
-    "conceptIds": ["c-third-party-contract"],
+    "conceptIds": [
+      "c-third-party-contract"
+    ],
     "question": "제3자를 위한 계약에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "제3자의 권리는 제3자가 채무자에게 수익의 의사표시를 한 때 생긴다",
@@ -212,13 +312,25 @@
     ],
     "answer": 4,
     "explanation": "제3자는 계약의 당사자가 아니므로 계약 해제에 따른 원상회복의무를 부담하지 않는다는 것이 판례이다. 급부를 받은 제3자에 대한 반환은 부당이득 법리로 별도 판단된다. ①은 제539조 제2항, ②는 제542조, ③은 제541조이다.",
+    "choiceExplanations": [
+      "옳다. 제539조 제2항으로, 제3자의 권리는 수익의 의사표시를 한 때 생긴다.",
+      "옳다. 제542조로, 채무자는 보상관계(요약자와의 계약)에 기한 항변으로 제3자에게 대항할 수 있다.",
+      "옳다. 제541조로, 수익의 의사표시 후에는 당사자가 이를 변경·소멸시키지 못한다.",
+      "옳다. 제3자는 계약의 당사자가 아니므로 해제권이나 취소권을 갖지 않는다.",
+      "틀렸다(정답). 제3자는 당사자가 아니므로 해제에 따른 원상회복의무를 부담하지 않는다는 것이 판례다."
+    ],
     "memoryTip": "제3자 = 권리만 취득, 해제권·원상회복의무는 없음",
     "trap": "제3자가 '당사자'인지 아닌지를 먼저 확정하면 해제·취소 관련 선지가 한 번에 정리된다.",
     "difficulty": 4,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제539조·제541조·제542조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제539조·제541조·제542조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -229,7 +341,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-general",
-    "conceptIds": ["c-contract-formation"],
+    "conceptIds": [
+      "c-contract-formation"
+    ],
     "question": "계약의 성립에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "승낙기간을 정한 청약은 그 기간 내에 승낙의 통지를 받지 못하면 효력을 잃는다",
@@ -240,13 +354,25 @@
     ],
     "answer": 4,
     "explanation": "민법 제534조는 승낙자가 청약에 변경을 가하여 승낙한 때에는 그 청약의 거절과 동시에 새로 청약한 것으로 본다고 규정한다. 따라서 원래 청약에 대한 계약은 성립하지 않는다. ③은 제531조의 발신주의(도달주의의 예외)이다.",
+    "choiceExplanations": [
+      "옳다. 제528조 제1항으로, 승낙기간 내에 승낙의 통지를 받지 못하면 청약은 효력을 잃는다.",
+      "옳다. 제527조로, 청약은 도달 후 임의로 철회하지 못한다.",
+      "옳다. 제531조로, 격지자 간 계약은 승낙의 통지를 발송한 때 성립한다(발신주의).",
+      "옳다. 제532조의 의사실현에 의한 계약 성립이다.",
+      "틀렸다(정답). 제534조에 따라 변경을 가한 승낙은 청약의 거절이자 새로운 청약으로 본다."
+    ],
     "memoryTip": "격지자 간 계약 = 발신주의(제531조) — 의사표시 일반원칙인 도달주의의 예외",
     "trap": "변경을 가한 승낙은 '새로운 청약'이다. 이것을 승낙으로 처리하는 선지가 단골이다.",
     "difficulty": 3,
     "questionType": "statute",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제527조·제528조·제531조·제534조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제527조·제528조·제531조·제534조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -257,7 +383,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-lease",
-    "conceptIds": ["c-exchange"],
+    "conceptIds": [
+      "c-exchange"
+    ],
     "question": "교환계약에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "교환은 당사자 쌍방이 금전 외의 재산권을 서로 이전할 것을 약정하는 계약이다",
@@ -268,13 +396,25 @@
     ],
     "answer": 4,
     "explanation": "판례는 교환계약의 당사자가 자기 목적물의 시가를 묵비하거나 다소 높게 고지하였다 하더라도 특별한 사정이 없는 한 기망행위에 해당하지 않는다고 본다. 나머지는 민법 제596조·제597조 및 매매 규정의 준용에 관한 내용이다.",
+    "choiceExplanations": [
+      "옳다. 제596조의 정의 그대로로, 금전 외의 재산권을 서로 이전하는 계약이다.",
+      "옳다. 교환은 유상·쌍무·낙성·불요식 계약이다.",
+      "옳다. 제597조에 따라 보충금에는 매매대금에 관한 규정을 준용한다.",
+      "옳다. 유상계약이므로 매도인의 담보책임 규정이 준용된다.",
+      "틀렸다(정답). 판례는 자기 목적물의 시가를 묵비하거나 다소 높게 고지한 것은 특별한 사정이 없는 한 기망행위가 아니라고 본다."
+    ],
     "memoryTip": "교환 = 금전 외 재산권의 교환 / 보충금은 매매대금 규정 준용 / 시가 묵비는 기망 아님",
     "trap": "'시가를 알리지 않으면 사기'라는 상식적 직관이 판례와 반대라는 점이 이 문제의 핵심이다.",
     "difficulty": 4,
     "questionType": "precedent",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제596조·제597조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제596조·제597조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -285,7 +425,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-lease",
-    "conceptIds": ["c-lease-general"],
+    "conceptIds": [
+      "c-lease-general"
+    ],
     "question": "임대차에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "임대인은 목적물을 사용·수익에 필요한 상태로 유지할 의무를 부담한다",
@@ -296,13 +438,25 @@
     ],
     "answer": 3,
     "explanation": "지상물매수청구권(제643조)은 건물 등 공작물의 소유를 목적으로 한 '토지임대차'에서 인정되는 권리이다. 건물 임대차에서 인정되는 것은 부속물매수청구권(제646조)이다. 두 권리의 적용 대상이 다르다는 점이 핵심이다.",
+    "choiceExplanations": [
+      "옳다. 제623조에 따라 임대인은 목적물을 사용·수익에 필요한 상태로 유지할 의무를 진다.",
+      "옳다. 제640조에 따라 차임연체액이 2기의 차임액에 달하면 임대인은 해지할 수 있다.",
+      "옳다. 제646조의 부속물매수청구권으로, 임대인의 동의를 얻어 부속시킨 물건이 대상이다.",
+      "틀렸다(정답). 지상물매수청구권(제643조)은 토지임대차에서 인정되는 권리다. 건물임대차에서 인정되는 것은 부속물매수청구권이다.",
+      "옳다. 제635조에 따라 기간 약정이 없으면 언제든지 해지통고를 할 수 있다."
+    ],
     "memoryTip": "토지임대차 → 지상물매수청구권 / 건물임대차 → 부속물매수청구권",
     "trap": "지상물과 부속물의 매수청구권을 바꿔 놓는 선지가 매년 출제된다.",
     "difficulty": 3,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제623조·제635조·제640조·제643조·제646조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제623조·제635조·제640조·제643조·제646조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -313,7 +467,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-contract",
     "minorTopicId": "civ-con-sale",
-    "conceptIds": ["c-repurchase"],
+    "conceptIds": [
+      "c-repurchase"
+    ],
     "question": "환매와 매매의 예약에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "부동산의 환매기간은 5년을 넘지 못한다",
@@ -324,13 +480,25 @@
     ],
     "answer": 4,
     "explanation": "민법 제590조에 따라 환매특약은 매매계약과 '동시에' 하여야 한다. 나중에 따로 체결한 약정은 환매가 아니라 재매매의 예약으로 다뤄진다. ①②는 제591조, ④는 예약완결권에 관한 판례의 태도이다.",
+    "choiceExplanations": [
+      "옳다. 제591조에 따라 부동산의 환매기간은 5년을 넘지 못한다(동산은 3년).",
+      "옳다. 같은 조에 따라 환매기간을 정한 때에는 다시 연장하지 못한다.",
+      "옳다. 제592조에 따라 환매특약을 등기하면 제3자에게 대항할 수 있다.",
+      "옳다. 예약완결권은 형성권이며, 행사기간을 정하지 않으면 10년의 제척기간에 걸린다는 것이 판례다.",
+      "틀렸다(정답). 제590조에 따라 환매특약은 매매계약과 '동시에' 해야 한다. 나중에 한 약정은 재매매의 예약이다."
+    ],
     "memoryTip": "환매 = 매매와 동시 특약 / 부동산 5년, 동산 3년 / 연장 불가",
     "trap": "'동시에'라는 요건을 빼면 환매가 아니게 된다는 점이 핵심이다.",
     "difficulty": 4,
     "questionType": "statute",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제564조·제590조·제591조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제564조·제590조·제591조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"

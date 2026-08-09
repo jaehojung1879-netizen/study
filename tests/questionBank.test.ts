@@ -9,9 +9,10 @@ import {
   findDuplicates,
   indexTaxonomy,
   similarity,
+  validateConceptNotes,
   validateQuestionBank,
 } from '../src/exam/validation';
-import { makeQuestion, testConfig, testTaxonomy } from './helpers';
+import { makeConceptNote, makeQuestion, testConfig, testTaxonomy } from './helpers';
 
 describe('shipped exam data', () => {
   const exams = listExams();
@@ -44,6 +45,33 @@ describe('shipped exam data', () => {
     const index = getExamIndex(examId)!;
     const lying = index.questions.filter((q) => q.sourceType === 'official_past_exam' && !q.verified);
     expect(lying.map((q) => q.id)).toHaveLength(0);
+  });
+
+  it.each(exams.map((e) => e.id))('%s explains every choice, not just the answer', (examId) => {
+    const index = getExamIndex(examId)!;
+    const unexplained = index.questions.filter(
+      (q) => (q.choiceExplanations?.length ?? 0) !== q.choices.length,
+    );
+    expect(unexplained.map((q) => q.id)).toHaveLength(0);
+  });
+
+  it.each(exams.map((e) => e.id))('%s has a concept note for every drilled concept', (examId) => {
+    const index = getExamIndex(examId)!;
+    const drilled = new Set(index.questions.flatMap((q) => q.conceptIds));
+    const missing = [...drilled].filter((c) => !index.conceptNote(c));
+    expect(missing, `노트가 없는 개념: ${missing.join(', ')}`).toHaveLength(0);
+  });
+
+  it.each(exams.map((e) => e.id))('%s passes every concept-note rule', (examId) => {
+    const index = getExamIndex(examId)!;
+    const issues = validateConceptNotes(
+      index.conceptNotes,
+      index.taxonomy,
+      index.config,
+      index.questions,
+    );
+    const errors = issues.filter((i) => i.level === 'error');
+    expect(errors, JSON.stringify(errors, null, 2)).toHaveLength(0);
   });
 
   it.each(exams.map((e) => e.id))('%s records lawAsOf on every statute-backed item', (examId) => {
@@ -117,9 +145,89 @@ describe('validateQuestionBank', () => {
     ).toContain('law-as-of');
   });
 
+  it('warns when no choice is explained and rejects a mismatched count', () => {
+    const warnings = validateQuestionBank([valid()], testTaxonomy, testConfig)
+      .filter((i) => i.level === 'warning')
+      .map((i) => i.rule);
+    expect(warnings).toContain('choice-explanations');
+
+    expect(errorsFor({ ...valid(), choiceExplanations: ['하나만 있습니다'] })).toContain(
+      'choice-explanation-count',
+    );
+  });
+
+  it('rejects a stub choice explanation', () => {
+    const question = valid();
+    const stubbed = question.choices.map((_, i) => (i === 0 ? '오답' : '충분히 긴 선지 해설입니다'));
+    expect(errorsFor({ ...question, choiceExplanations: stubbed })).toContain(
+      'choice-explanation-text',
+    );
+  });
+
+  it('accepts an item whose choices are all explained', () => {
+    const question = valid();
+    const explained = question.choices.map((c) => `${c} 선지에 대한 충분히 긴 해설입니다.`);
+    const issues = validateQuestionBank(
+      [{ ...question, choiceExplanations: explained }],
+      testTaxonomy,
+      testConfig,
+    );
+    expect(issues.map((i) => i.rule)).not.toContain('choice-explanations');
+  });
+
   it('rejects duplicate ids across the bank', () => {
     const issues = validateQuestionBank([valid(), { ...valid(), id: 'dupe' }, { ...valid(), id: 'dupe' }], testTaxonomy, testConfig);
     expect(issues.map((i) => i.rule)).toContain('id-unique');
+  });
+});
+
+describe('validateConceptNotes', () => {
+  const errorsFor = (note: ReturnType<typeof makeConceptNote>) =>
+    validateConceptNotes([note], testTaxonomy, testConfig)
+      .filter((i) => i.level === 'error')
+      .map((i) => i.rule);
+
+  it('accepts a well-formed note', () => {
+    expect(errorsFor(makeConceptNote())).toHaveLength(0);
+  });
+
+  it('rejects a concept id that is not in the taxonomy', () => {
+    expect(errorsFor(makeConceptNote({ conceptId: 'nope' }))).toContain('note-concept-exists');
+  });
+
+  it('requires both lengths — a short version and a long one', () => {
+    expect(errorsFor(makeConceptNote({ summary: ['한 줄뿐'] }))).toContain('note-summary');
+    expect(errorsFor(makeConceptNote({ sections: [] }))).toContain('note-sections');
+  });
+
+  it('rejects a ragged comparison table', () => {
+    const note = makeConceptNote({
+      comparison: { columns: ['구분', '왼쪽', '오른쪽'], rows: [['행', '값']] },
+    });
+    expect(errorsFor(note)).toContain('note-comparison-shape');
+  });
+
+  it('requires lawAsOf whenever a statute is cited', () => {
+    const note = makeConceptNote({ lawReferences: [{ law: '민법', article: '제1조' }] });
+    expect(errorsFor(note)).toContain('note-law-as-of');
+  });
+
+  it('rejects a related-concept link that goes nowhere', () => {
+    expect(errorsFor(makeConceptNote({ relatedConceptIds: ['nope'] }))).toContain(
+      'note-related-exists',
+    );
+  });
+
+  it('warns about a concept that questions drill but no note explains', () => {
+    const issues = validateConceptNotes(
+      [makeConceptNote()],
+      testTaxonomy,
+      testConfig,
+      [makeQuestion({ minorTopicId: 'minor-a2', conceptIds: ['concept-a2'] })],
+    );
+    expect(issues.filter((i) => i.rule === 'note-coverage').map((i) => i.questionId)).toEqual([
+      'concept-a2',
+    ]);
   });
 });
 

@@ -25,6 +25,26 @@ CI(`npm run validate:questions`)가 이 규칙 중 기계적으로 검사 가능
 정답·해설은 표준적인 교과 내용에 기초해 작성했으나 **1차 검증만 거친 상태**이므로,
 특히 법령 숫자와 판례 법리는 반드시 원문을 대조한 뒤 `verified`/`verifiedAt`을 채운다.
 
+### 실전 난이도 세트를 `기출 변형`으로 표시하지 않는 이유
+
+`090-res-exam-level.json` · `100-civ-exam-level.json`의 48문항은 공식 시험의
+**출제 형식**(박스형 ㄱㄴㄷ 조합, 개수형, 사례형 甲乙丙, 계산형)과 난이도(4~5)를
+그대로 재현해 새로 작성한 것이다. 특정 기출 문항의 구조를 가져온 것이 아니므로
+`adapted_past_exam`(`기출 변형`)이 아니라 `generated`로 표시한다.
+
+실제 기출과 대조하려면 Q-Net의 [기출문제 내려받기](https://www.q-net.or.kr/cst003.do?id=cst00309&gSite=L&gId=08)와
+[가답안 및 최종정답 공개](https://www.q-net.or.kr/anc002.do?id=anc00201&gSite=L&gId=08)에서
+원본 문제지·정답을 받아 확인한다. 원본을 확인하고 그 구조를 차용해 문장을 새로 쓴
+경우에만 `adapted_past_exam` + `sourceExamYear`/`sourceExamRound`를 채운다.
+원본을 확인하지 않은 채 연도·회차를 적는 것은 출처 허위표기이므로 금지한다.
+
+### 선지별 해설(`choiceExplanations`)
+
+정답 하나만 설명하는 해설은 학습 효과가 없다. 시험 문항은 두 개 이상의 선지가
+그럴듯해 보이도록 설계되므로, 학습자가 **자기가 고른 선지가 왜 틀렸는지** 알아야 한다.
+따라서 모든 신규 문항은 선택지와 같은 개수·같은 순서의 `choiceExplanations`를 채운다.
+CI는 개수 불일치와 빈 항목을 오류로, 배열 자체가 없는 경우를 경고로 처리한다.
+
 ## 3. 공식 출처 우선순위
 
 1. **국가법령정보센터** (https://www.law.go.kr) — 법령 조문의 최종 근거
@@ -93,7 +113,20 @@ scripts/check-law-updates.ts  ← 주 1회 GitHub Actions(law-check.yml)
 
 API 키는 프론트엔드에 넣지 않는다. 로컬 환경변수 또는 GitHub Actions Secret으로만 주입한다.
 
-## 7. 중복 처리 기준
+## 7. 개념노트
+
+`data/exams/<id>/concept-notes/*.json`은 taxonomy의 모든 개념에 대한 학습 노트다.
+문항과 같은 출처 원칙이 그대로 적용된다. 특히 법조문·판례를 인용하는 노트에는
+`lawReferences`와 `lawAsOf`를 남겨 법령 변경 감지의 대상이 되게 한다.
+
+- **짧은 버전(`summary`)과 긴 버전(`sections`)은 각각 따로 쓴다.**
+  긴 노트를 기계적으로 줄이면 요약이 무의미해지고, 짧은 노트를 부풀리면 핵심이 묻힌다.
+- `relatedConceptIds`는 실제로 함께 읽어야 하는 개념만 연결한다. 링크가 taxonomy에
+  없으면 CI 오류다.
+- **문항이 있는데 노트가 없는 개념**은 CI 경고 대상이다. 학습자가 오답 화면에서
+  `관련 개념`을 눌렀을 때 빈 화면을 만나는 상황을 막기 위한 것이다.
+
+## 8. 중복 처리 기준
 
 - **같은 지문 반복** → 제거 대상. `npm run check:duplicates`가 CI를 실패시킨다.
 - **같은 개념을 다른 형태로 묻는 문항** → 적극 권장. 취약개념을 여러 각도에서

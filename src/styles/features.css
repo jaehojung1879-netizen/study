@@ -513,3 +513,161 @@
   color: var(--bad);
   border-color: color-mix(in srgb, var(--bad) 35%, transparent);
 }
+
+/* ---------- 선지별 해설 (§10) ---------- */
+
+/* The answer alone teaches nothing: every choice gets its own line, with the
+   learner's own pick marked so the comparison they need is the first one they
+   see. */
+.choice-notes {
+  list-style: none;
+  display: grid;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+}
+
+.choice-note {
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border-strong);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--bg-sunken);
+}
+
+.choice-note--ok {
+  border-left-color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.choice-note--bad {
+  border-left-color: var(--bad);
+  background: var(--bad-soft);
+}
+
+.choice-note__head {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.choice-note__num {
+  flex: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.choice-note__text {
+  flex: 1;
+}
+
+.choice-note__tag {
+  flex: none;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.choice-note--ok .choice-note__tag {
+  color: var(--ok);
+}
+
+.choice-note--bad .choice-note__tag {
+  color: var(--bad);
+}
+
+.choice-note__why {
+  margin-top: 5px;
+  font-size: 0.83rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  word-break: keep-all;
+}
+
+/* ---------- 개념노트 (§13) ---------- */
+
+.chip--link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border-strong));
+}
+
+.chip__arrow {
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.note-subject {
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.note-major {
+  font-size: 0.95rem;
+  font-weight: 680;
+  color: var(--text);
+  margin-top: 4px;
+}
+
+.note-minor__label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.note-minor + .note-minor {
+  margin-top: 14px;
+}
+
+.note-card + .note-card {
+  margin-top: 8px;
+}
+
+.note-card__title {
+  font-size: 0.95rem;
+  font-weight: 680;
+  word-break: keep-all;
+}
+
+.note-card__headline {
+  margin-top: 6px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--accent);
+  font-weight: 600;
+  word-break: keep-all;
+}
+
+.note-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 5px;
+  font-size: 0.87rem;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.note-list--trap li::marker {
+  color: var(--warn);
+}
+
+.note-table {
+  min-width: 420px;
+}
+
+.note-table tbody th {
+  font-weight: 650;
+  color: var(--text);
+  white-space: nowrap;
+}

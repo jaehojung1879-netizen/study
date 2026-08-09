@@ -9,6 +9,7 @@ import type { Question } from '../exam/types';
 import type { Attempt, Confidence, ErrorCause } from '../storage/types';
 import type { ExamIndex } from '../exam/registry';
 import { ERROR_CAUSE_LABELS } from '../learning/analytics/stats';
+import { ExplanationBody } from './Explanation';
 import {
   CHOICE_MARK,
   DIFFICULTY_LABEL,
@@ -203,7 +204,7 @@ export function QuestionCard(props: QuestionCardProps): JSX.Element {
             </div>
           ) : null}
 
-          <ExplanationBody question={question} index={index} />
+          <ExplanationBody question={question} index={index} selected={attempt.selected} />
 
           {!correct && props.errorCausePrompt ? (
             <>
@@ -255,86 +256,6 @@ export function QuestionCard(props: QuestionCardProps): JSX.Element {
               </button>
             </div>
           ) : null}
-        </div>
-      ) : null}
-    </div>
-  );
-}
-
-export function ExplanationBody({
-  question,
-  index,
-}: {
-  question: Question;
-  index?: ExamIndex;
-}): JSX.Element {
-  return (
-    <div>
-      <div className="explain__block">
-        <div className="explain__label">핵심 해설</div>
-        <p className="explain__body">{question.explanation}</p>
-      </div>
-
-      {question.calculationSteps?.length ? (
-        <div className="explain__block">
-          <div className="explain__label">계산 풀이</div>
-          <div className="calc-steps">
-            {question.calculationSteps.map((step, i) => (
-              <div className="calc-step" key={i}>
-                <span className="calc-step__label">{step.label}</span>
-                <span>{step.detail}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      ) : null}
-
-      {question.memoryTip ? (
-        <div className="explain__block">
-          <div className="explain__label">한 줄 암기</div>
-          <p className="explain__body explain__highlight">{question.memoryTip}</p>
-        </div>
-      ) : null}
-
-      {question.trap ? (
-        <div className="explain__block">
-          <div className="explain__label">함정 포인트</div>
-          <p className="explain__body">{question.trap}</p>
-        </div>
-      ) : null}
-
-      {question.precedents?.length ? (
-        <div className="explain__block">
-          <div className="explain__label">판례</div>
-          {question.precedents.map((p, i) => (
-            <p className="explain__body" key={i}>
-              {p.citation}
-              {p.holding ? ` — ${p.holding}` : ''}
-            </p>
-          ))}
-        </div>
-      ) : null}
-
-      {question.lawReferences?.length ? (
-        <div className="explain__block">
-          <div className="explain__label">법적 근거</div>
-          <p className="explain__body">
-            {question.lawReferences.map((l) => `${l.law} ${l.article ?? ''}`.trim()).join(' · ')}
-          </p>
-          {question.lawAsOf ? <p className="tiny faint">법령 확인일 {question.lawAsOf}</p> : null}
-        </div>
-      ) : null}
-
-      {question.conceptIds.length ? (
-        <div className="explain__block">
-          <div className="explain__label">관련 개념</div>
-          <div className="chip-row">
-            {question.conceptIds.map((id) => (
-              <span className="chip chip--sm" key={id}>
-                {index ? index.conceptName(id) : id}
-              </span>
-            ))}
-          </div>
         </div>
       ) : null}
     </div>

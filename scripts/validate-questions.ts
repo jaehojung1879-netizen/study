@@ -5,7 +5,7 @@
  *
  *   npm run validate:questions
  */
-import { validateQuestionBank, type Issue } from '../src/exam/validation';
+import { validateConceptNotes, validateQuestionBank, type Issue } from '../src/exam/validation';
 import { loadAllExams } from './lib/loadExams';
 
 function main(): void {
@@ -30,6 +30,22 @@ function main(): void {
     );
     printByFile(exam.questionFiles, errors, '  ✗');
     printByFile(exam.questionFiles, warnings, '  ⚠');
+
+    const noteIssues = validateConceptNotes(
+      exam.conceptNotes,
+      exam.taxonomy,
+      exam.config,
+      exam.questions,
+    );
+    const noteErrors = noteIssues.filter((i) => i.level === 'error');
+    const noteWarnings = noteIssues.filter((i) => i.level === 'warning');
+    errorCount += noteErrors.length;
+    warningCount += noteWarnings.length;
+    console.info(
+      `  개념노트 ${exam.conceptNotes.length}개 · 오류 ${noteErrors.length} · 경고 ${noteWarnings.length}`,
+    );
+    printByFile(exam.conceptNoteFiles, noteErrors, '  ✗');
+    printByFile(exam.conceptNoteFiles, noteWarnings, '  ⚠');
 
     // Coverage report: which minor topics have no questions at all.
     const covered = new Set(exam.questions.map((q) => q.minorTopicId));

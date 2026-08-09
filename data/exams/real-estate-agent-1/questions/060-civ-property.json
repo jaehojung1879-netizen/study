@@ -5,7 +5,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-change",
-    "conceptIds": ["c-change-by-law"],
+    "conceptIds": [
+      "c-change-by-law"
+    ],
     "question": "등기 없이도 물권변동의 효력이 생기는 경우가 아닌 것은? (민법 제187조)",
     "choices": [
       "상속에 의한 부동산 취득",
@@ -16,6 +18,13 @@
     ],
     "answer": 2,
     "explanation": "민법 제245조 제1항의 점유취득시효는 20년간 점유한 자가 '등기함으로써' 소유권을 취득한다고 규정하므로 제187조의 예외에 해당하지 않는다. 상속·공용징수·판결·경매·기타 법률의 규정에 의한 취득은 등기 없이 효력이 생기지만, 등기하지 않으면 처분하지 못한다.",
+    "choiceExplanations": [
+      "해당한다. 상속은 제187조의 대표적 사유로 등기 없이 물권을 취득한다.",
+      "해당한다. 공용징수(수용)도 등기 없이 물권변동의 효력이 생긴다.",
+      "해당하지 않는다(정답). 제245조 제1항은 20년의 점유에 더해 '등기함으로써' 소유권을 취득한다고 규정한다.",
+      "해당한다. 여기서의 판결은 공유물분할판결과 같은 형성판결을 말한다.",
+      "해당한다. 경매는 매각대금을 완납한 때 등기 없이 소유권을 취득한다."
+    ],
     "memoryTip": "제187조 = 상속·공용징수·판결·경매 (+기타 법률규정) / 점유취득시효는 등기해야 취득",
     "trap": "'등기부취득시효'는 등기가 요건이고, '점유취득시효'는 등기가 취득요건이다. 둘 다 등기와 관계있다는 점을 헷갈리지 않는다.",
     "difficulty": 3,
@@ -23,8 +32,14 @@
     "sourceType": "generated",
     "verified": false,
     "lawReferences": [
-      { "law": "민법", "article": "제187조" },
-      { "law": "민법", "article": "제245조" }
+      {
+        "law": "민법",
+        "article": "제187조"
+      },
+      {
+        "law": "민법",
+        "article": "제245조"
+      }
     ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
@@ -36,7 +51,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-change",
-    "conceptIds": ["c-registration"],
+    "conceptIds": [
+      "c-registration"
+    ],
     "question": "등기의 효력에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "등기에는 권리의 존재를 추정하는 효력이 인정된다",
@@ -47,13 +64,25 @@
     ],
     "answer": 3,
     "explanation": "가등기는 장래 본등기의 순위를 보전하는 효력만 있을 뿐, 가등기만으로는 실체법상 물권변동의 효력이 생기지 않는다. 본등기를 하면 그 순위가 가등기 시로 소급할 뿐이다. ⑤는 불법말소된 등기라도 물권은 소멸하지 않는다는 판례의 태도이다.",
+    "choiceExplanations": [
+      "옳다. 등기된 권리는 적법하게 존재하는 것으로 추정된다.",
+      "옳다. 추정력은 등기명의인은 물론 제3자도 원용할 수 있다.",
+      "옳다. 우리 등기에는 공신력이 없어 무효인 등기를 믿고 거래해도 보호받지 못한다.",
+      "틀렸다(정답). 가등기는 순위보전의 효력만 있고 그 자체로 실체법상 물권변동의 효력이 생기지 않는다.",
+      "옳다. 원인 없이 말소된 등기라도 물권 자체는 소멸하지 않는다는 것이 판례다."
+    ],
     "memoryTip": "가등기 = 순위보전 효력만 / 공신력은 없음(등기를 믿어도 보호 안 됨)",
     "trap": "'등기의 공신력'을 인정하는 선지는 언제나 오답이다. 우리 민법은 공신력을 인정하지 않는다.",
     "difficulty": 4,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제186조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제186조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -64,7 +93,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-ownership",
-    "conceptIds": ["c-acquisitive-prescription"],
+    "conceptIds": [
+      "c-acquisitive-prescription"
+    ],
     "question": "부동산 점유취득시효에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "20년간 소유의 의사로 평온·공연하게 점유하고 등기함으로써 소유권을 취득한다",
@@ -75,13 +106,25 @@
     ],
     "answer": 4,
     "explanation": "판례는 취득시효의 기산점을 당사자가 임의로 선택할 수 없고 실제 점유 개시 시점을 기산점으로 삼아야 한다고 본다(다만 점유가 계속되고 소유자의 변동이 없는 경우에는 역산이 허용된다). ④는 시효완성 후 제3자 처분 시 대항 불가라는 확립된 판례이다.",
+    "choiceExplanations": [
+      "옳다. 제245조 제1항의 요건 그대로이며, 등기가 필요하다는 점이 등기부취득시효와 다르다.",
+      "옳다. 제197조 제1항에 따라 소유의 의사·선의·평온·공연은 추정된다(무과실은 추정되지 않는다).",
+      "옳다. 시효완성자는 시효완성 당시의 소유자에 대해 등기청구권을 갖는다.",
+      "옳다. 등기청구권이 채권적 청구권이므로 시효완성 후의 제3자에게는 대항하지 못한다.",
+      "틀렸다(정답). 판례는 기산점을 임의로 선택할 수 없고 실제 점유 개시 시점을 기준으로 해야 한다고 본다."
+    ],
     "memoryTip": "20년 + 자주·평온·공연 + 등기 = 점유취득시효 / 등기부취득시효는 10년 + 선의·무과실",
     "trap": "시효완성 '전' 처분과 '후' 처분의 결론이 정반대다. 시점을 반드시 표시하고 푼다.",
     "difficulty": 4,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제245조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제245조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -92,7 +135,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-ownership",
-    "conceptIds": ["c-co-ownership"],
+    "conceptIds": [
+      "c-co-ownership"
+    ],
     "question": "공유에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "각 공유자는 공유물 전부를 지분의 비율로 사용·수익할 수 있다",
@@ -103,13 +148,25 @@
     ],
     "answer": 4,
     "explanation": "공유지분은 각 공유자에게 귀속된 독립된 권리이므로 다른 공유자의 동의 없이 자유롭게 처분할 수 있다. 동의가 필요한 것은 '공유물 자체'의 처분·변경이다. ①~④는 민법 제263조·제264조·제265조의 내용이다.",
+    "choiceExplanations": [
+      "옳다. 제263조에 따라 각 공유자는 공유물 전부를 지분 비율로 사용·수익할 수 있다.",
+      "옳다. 제265조 단서로, 보존행위는 각자 단독으로 할 수 있다.",
+      "옳다. 제265조 본문으로, 관리에 관한 사항은 지분의 과반수로 결정한다.",
+      "옳다. 제264조로, 공유물 자체의 처분·변경에는 전원의 동의가 필요하다.",
+      "틀렸다(정답). 공유지분은 각자에게 귀속된 독립한 권리이므로 다른 공유자의 동의 없이 처분할 수 있다."
+    ],
     "memoryTip": "보존=단독, 관리=지분 과반수, 처분·변경=전원 동의, 지분 처분=자유",
     "trap": "'지분의 처분'과 '공유물의 처분'을 바꿔 놓는 선지가 가장 자주 나온다.",
     "difficulty": 3,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제263조~제265조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제263조~제265조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -120,7 +177,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-security",
-    "conceptIds": ["c-lien"],
+    "conceptIds": [
+      "c-lien"
+    ],
     "question": "유치권에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "유치권은 법정담보물권으로 등기 없이 성립한다",
@@ -131,13 +190,25 @@
     ],
     "answer": 4,
     "explanation": "점유는 유치권의 성립요건이자 존속요건이므로 점유를 잃으면 유치권은 소멸한다(민법 제328조). ②는 불가분성(제321조), ③은 제322조, ④는 제320조의 견련성 요건이다. 유치권은 우선변제권이 없는 대신 사실상 목적물을 붙잡아 두는 힘으로 변제를 강제한다.",
+    "choiceExplanations": [
+      "옳다. 유치권은 법정담보물권이므로 요건을 갖추면 등기 없이 성립한다.",
+      "옳다. 불가분성(제321조)에 따라 채권 전부를 변제받을 때까지 목적물 전부에 권리를 행사한다.",
+      "옳다. 경매청구권은 있으나(제322조) 우선변제권은 없어 사실상 인도를 거절해 변제를 강제한다.",
+      "옳다. 채권이 그 물건에 관해 생긴 것이어야 한다는 견련성이 성립요건이다(제320조).",
+      "틀렸다(정답). 점유는 성립요건이자 존속요건이므로 점유를 잃으면 유치권은 소멸한다(제328조)."
+    ],
     "memoryTip": "유치권 = 점유가 생명 / 등기 불요 / 우선변제권 없음 / 불가분성 있음",
     "trap": "'유치권자는 우선변제를 받는다'는 선지도 함께 나온다. 우선변제권은 저당권·전세권의 것이다.",
     "difficulty": 3,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제320조·제321조·제322조·제328조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제320조·제321조·제322조·제328조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -148,7 +219,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-security",
-    "conceptIds": ["c-mortgage"],
+    "conceptIds": [
+      "c-mortgage"
+    ],
     "question": "저당권에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "저당권은 목적물의 점유를 이전하지 않는 담보물권이다",
@@ -159,13 +232,25 @@
     ],
     "answer": 4,
     "explanation": "저당권은 담보물권으로서 부종성이 있으므로 피담보채권이 소멸하면 저당권도 당연히 소멸하며, 등기가 남아 있더라도 무효인 등기에 불과하다. ③은 수반성(제361조), ④는 물상대위·과실에 관한 제359조의 내용이다.",
+    "choiceExplanations": [
+      "옳다. 저당권은 점유를 이전하지 않고 우선변제만 받는 담보물권이다(제356조).",
+      "옳다. 제358조에 따라 저당권의 효력은 부합물과 종물에 미친다.",
+      "옳다. 수반성에 따라 피담보채권과 분리해 저당권만 양도할 수 없다.",
+      "옳다. 제359조에 따라 압류 후에 생긴 과실(차임채권 포함)에는 저당권의 효력이 미친다.",
+      "틀렸다(정답). 부종성에 따라 피담보채권이 소멸하면 저당권도 소멸하며, 남아 있는 등기는 무효인 등기에 불과하다."
+    ],
     "memoryTip": "담보물권의 4대 성질 = 부종성·수반성·불가분성·물상대위성",
     "trap": "'등기가 남아 있으면 유효'라는 서술은 등기의 공신력을 인정하는 셈이라 언제나 오답이다.",
     "difficulty": 3,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제356조·제358조·제359조·제361조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제356조·제358조·제359조·제361조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -176,7 +261,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-security",
-    "conceptIds": ["c-statutory-superficies"],
+    "conceptIds": [
+      "c-statutory-superficies"
+    ],
     "question": "법정지상권에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "저당권 설정 당시 토지와 건물이 동일인 소유여야 한다",
@@ -187,13 +274,25 @@
     ],
     "answer": 4,
     "explanation": "법정지상권이 성립하더라도 토지 사용의 대가인 지료는 지급해야 하며, 당사자의 협의가 없으면 법원이 정한다(민법 제366조 단서). 법정지상권은 제187조의 '법률의 규정에 의한 물권취득'이므로 등기 없이 취득하고 제3자에게 대항할 수 있다.",
+    "choiceExplanations": [
+      "옳다. 제366조의 요건으로, 저당권 설정 당시 토지와 건물이 동일인 소유여야 한다.",
+      "옳다. 경매로 소유자가 달라진 경우에 법정지상권이 성립한다.",
+      "옳다. 제187조의 법률규정에 의한 취득이므로 등기 없이 취득하고 제3자에게 대항할 수 있다.",
+      "옳다. 저당권 설정 당시 건물이 존재해야 하므로 나대지에 설정한 뒤 신축한 경우에는 성립하지 않는다.",
+      "틀렸다(정답). 법정지상권이 성립해도 토지 사용의 대가인 지료는 지급해야 하며, 협의가 없으면 법원이 정한다."
+    ],
     "memoryTip": "법정지상권 요건 = 저당권 설정 당시 ① 건물 존재 ② 토지·건물 동일인 소유 ③ 경매로 소유자 분리",
     "trap": "'지료 없음'은 오답이다. 무상으로 남의 땅을 계속 쓰게 해 주는 제도가 아니다.",
     "difficulty": 4,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제366조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제366조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -204,7 +303,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-usufruct",
-    "conceptIds": ["c-chonsegwon"],
+    "conceptIds": [
+      "c-chonsegwon"
+    ],
     "question": "전세권에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "전세권은 용익물권이면서 담보물권의 성질도 함께 가진다",
@@ -215,13 +316,25 @@
     ],
     "answer": 2,
     "explanation": "민법 제312조 제1항은 전세권의 존속기간을 10년을 넘지 못한다고 규정한다(당사자가 그보다 길게 정하면 10년으로 단축된다). 20년은 지상권·임대차 등 다른 제도의 숫자와 혼동시키기 위한 함정이다. ⑤는 제312조 제2항으로 옳고, ④는 제306조에 따라 전세권이 물권이므로 처분이 자유롭다는 내용이다.",
+    "choiceExplanations": [
+      "옳다. 전세권은 용익물권이면서 전세금반환채권을 담보하는 담보물권의 성질도 갖는다.",
+      "옳다. 전세금의 지급은 전세권의 성립요소이며, 이 점이 임차권과 다르다.",
+      "틀렸다(정답). 제312조 제1항에 따라 전세권의 존속기간은 10년을 넘지 못한다. 20년은 다른 제도의 숫자다.",
+      "옳다. 제306조에 따라 전세권은 물권이므로 양도·담보제공·전전세가 자유롭다(설정행위로 금지 가능).",
+      "옳다. 제312조 제2항으로, 건물 전세권의 최단기간은 1년이다."
+    ],
     "memoryTip": "전세권 최장 10년 / 건물전세권 1년 미만 → 1년으로 / 토지전세권에는 최단기간 제한 없음",
     "trap": "존속기간 숫자(10년/20년/30년)를 바꿔치기하는 선지가 반복된다. 제도별 숫자를 표로 정리해 둔다.",
     "difficulty": 4,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제303조·제306조·제312조·제317조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제303조·제306조·제312조·제317조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -232,7 +345,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-possession",
-    "conceptIds": ["c-possessor-restorer"],
+    "conceptIds": [
+      "c-possessor-restorer"
+    ],
     "question": "점유자와 회복자의 관계에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "선의의 점유자는 점유물의 과실을 취득한다",
@@ -243,13 +358,25 @@
     ],
     "answer": 3,
     "explanation": "민법 제203조 제1항 단서는 점유자가 과실을 취득한 경우에는 '통상의 필요비'를 청구하지 못한다고 규정한다. 과실을 가져갔으면 그 과실을 얻기 위한 통상적 관리비는 스스로 부담하라는 취지이다. ⑤는 제203조 제3항이다.",
+    "choiceExplanations": [
+      "옳다. 제201조 제1항에 따라 선의의 점유자는 과실을 취득한다.",
+      "옳다. 제201조 제2항에 따라 악의의 점유자는 수취한 과실을 반환해야 한다.",
+      "옳다. 필요비는 선의·악의를 불문하고 상환을 청구할 수 있는 것이 원칙이다.",
+      "틀렸다(정답). 제203조 제1항 단서에 따라 과실을 취득한 점유자는 통상의 필요비를 청구하지 못한다.",
+      "옳다. 제203조 제3항에 따라 법원은 회복자의 청구로 유익비의 상환기간을 허여할 수 있다."
+    ],
     "memoryTip": "과실 취득 → 통상 필요비 청구 불가 / 유익비 → 가액 증가 현존 시, 기한 허여 가능",
     "trap": "'선의·악의를 불문하고 필요비 청구 가능'은 맞지만, 과실을 취득한 경우의 예외를 놓치면 틀린다.",
     "difficulty": 4,
     "questionType": "statute",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제201조·제203조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제201조·제203조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -260,7 +387,10 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-general",
-    "conceptIds": ["c-real-claim", "c-property-right-types"],
+    "conceptIds": [
+      "c-real-claim",
+      "c-property-right-types"
+    ],
     "question": "물권적 청구권에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "소유권에 기한 물권적 청구권은 소멸시효에 걸리지 않는다",
@@ -271,13 +401,25 @@
     ],
     "answer": 4,
     "explanation": "물권적 청구권은 물권의 효력으로서 인정되는 것이므로 물권과 분리하여 따로 양도할 수 없다. ④ 지역권은 점유를 수반하지 않으므로 방해제거·방해예방청구권만 인정되고 반환청구권은 인정되지 않는다.",
+    "choiceExplanations": [
+      "옳다. 소유권이 존속하는 한 그에 기한 물권적 청구권은 소멸시효에 걸리지 않는다.",
+      "옳다. 물권적 청구권은 방해 상태의 제거를 구하는 것이므로 고의·과실을 요하지 않는다.",
+      "옳다. 점유의 소와 본권의 소는 서로 영향을 미치지 않으며 병존할 수 있다(제208조).",
+      "옳다. 지역권은 점유를 수반하지 않으므로 반환청구권이 인정되지 않는다.",
+      "틀렸다(정답). 물권적 청구권은 물권의 효력으로 인정되므로 물권과 분리하여 양도할 수 없다."
+    ],
     "memoryTip": "지역권·저당권 = 점유 없음 → 반환청구권 없음(방해제거·예방만)",
     "trap": "물권적 청구권에 고의·과실이 필요하다는 선지는 손해배상청구권과 혼동시키는 함정이다.",
     "difficulty": 4,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제213조·제214조·제301조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제213조·제214조·제301조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -288,7 +430,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-usufruct",
-    "conceptIds": ["c-superficies"],
+    "conceptIds": [
+      "c-superficies"
+    ],
     "question": "지상권에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "지상권은 타인의 토지에 건물 기타 공작물이나 수목을 소유하기 위한 물권이다",
@@ -299,13 +443,25 @@
     ],
     "answer": 3,
     "explanation": "지상권은 물권이므로 지상권자는 토지소유자의 동의 없이 자유롭게 양도하거나 임대할 수 있다(민법 제282조). 이는 임차권(채권)과 결정적으로 다른 점이다. ③ 지료는 등기해야 제3자에게 대항할 수 있는 요소일 뿐 성립요소는 아니다.",
+    "choiceExplanations": [
+      "옳다. 제279조의 정의 그대로이며, 건물·공작물·수목의 소유가 목적이다.",
+      "옳다. 제280조에 따라 견고한 건물이나 수목의 최단 존속기간은 30년이다.",
+      "옳다. 지료는 지상권의 성립요소가 아니며, 등기해야 제3자에게 대항할 수 있는 요소일 뿐이다.",
+      "틀렸다(정답). 제282조에 따라 지상권자는 토지소유자의 동의 없이 지상권을 양도하거나 토지를 임대할 수 있다.",
+      "옳다. 제283조에 따라 기간 만료 시 지상물이 현존하면 갱신청구와 지상물매수청구가 가능하다."
+    ],
     "memoryTip": "지상권 = 물권 → 처분 자유 / 임차권 = 채권 → 임대인 동의 필요",
     "trap": "지상권과 임차권의 '양도 자유' 여부를 바꿔 놓는 선지가 반복 출제된다.",
     "difficulty": 3,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제279조·제280조·제282조·제283조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제279조·제280조·제282조·제283조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -316,7 +472,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-change",
-    "conceptIds": ["c-intermediate-omission"],
+    "conceptIds": [
+      "c-intermediate-omission"
+    ],
     "question": "중간생략등기에 관한 설명으로 옳은 것은?",
     "choices": [
       "이미 경료된 중간생략등기는 언제나 무효이다",
@@ -327,13 +485,25 @@
     ],
     "answer": 1,
     "explanation": "판례는 최초매도인·중간자·최종매수인 3자 간 합의가 있으면 최종매수인이 최초매도인에게 직접 소유권이전등기를 청구할 수 있다고 본다. ①③ 합의가 없더라도 이미 경료된 중간생략등기는 실체관계에 부합하는 한 유효하다. ④ 토지거래허가구역에서는 허가 잠탈이 되므로 무효이다. ⑤ 합의가 있어도 중간자의 등기청구권이 소멸하지는 않는다.",
+    "choiceExplanations": [
+      "틀렸다. 이미 경료된 중간생략등기는 실체관계에 부합하는 한 유효하다는 것이 판례다.",
+      "옳다(정답). 3자 간 합의가 있으면 최종매수인은 최초매도인에게 직접 이전등기를 청구할 수 있다.",
+      "틀렸다. 합의가 없더라도 이미 경료된 등기는 실체관계에 부합하면 말소 대상이 아니다.",
+      "틀렸다. 토지거래허가구역 내 중간생략등기는 허가제를 잠탈하므로 무효다.",
+      "틀렸다. 중간생략등기의 합의가 있어도 중간자의 등기청구권이 소멸하지는 않는다."
+    ],
     "memoryTip": "이미 된 중간생략등기 = 실체관계 부합하면 유효 / 청구권 행사 = 3자 합의 필요",
     "trap": "'이미 경료된 등기의 효력'과 '등기청구권의 행사 가부'는 별개의 논점이다.",
     "difficulty": 4,
     "questionType": "precedent",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "부동산 거래신고 등에 관한 법률", "article": "제11조" }],
+    "lawReferences": [
+      {
+        "law": "부동산 거래신고 등에 관한 법률",
+        "article": "제11조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
@@ -344,7 +514,9 @@
     "subjectId": "civil-law",
     "majorTopicId": "civ-property",
     "minorTopicId": "civ-prop-security",
-    "conceptIds": ["c-revolving-mortgage"],
+    "conceptIds": [
+      "c-revolving-mortgage"
+    ],
     "question": "근저당권에 관한 설명으로 옳지 않은 것은?",
     "choices": [
       "근저당권은 계속적 거래관계에서 발생하는 불특정 채권을 담보한다",
@@ -355,13 +527,25 @@
     ],
     "answer": 3,
     "explanation": "근저당권자는 등기된 채권최고액의 범위에서만 우선변제를 받으므로, 확정채권액이 최고액을 초과하더라도 후순위권리자나 제3취득자에 대한 관계에서는 최고액까지만 우선한다. ③은 근저당권의 부종성이 완화된다는 점을 보여주는 특징이다.",
+    "choiceExplanations": [
+      "옳다. 근저당권은 계속적 거래에서 생기는 불특정 다수의 채권을 최고액 한도로 담보한다.",
+      "옳다. 채권최고액은 등기사항이며, 등기된 최고액이 우선변제의 한도가 된다.",
+      "옳다. 확정 전에는 부종성이 완화되어 채무액이 일시적으로 0이 되어도 소멸하지 않는다.",
+      "틀렸다(정답). 근저당권자는 등기된 채권최고액 범위에서만 우선변제를 받으므로, 초과분을 후순위권리자가 부담하지 않는다.",
+      "옳다. 결산기 도래, 기본계약 종료, 경매신청 등으로 피담보채권이 확정된다."
+    ],
     "memoryTip": "근저당 = 채권최고액이 한도 / 부종성 완화(일시 소멸해도 존속)",
     "trap": "채무자에 대해서는 초과분도 갚아야 하지만, '우선변제'의 범위는 최고액까지다. 상대방을 구분한다.",
     "difficulty": 4,
     "questionType": "concept",
     "sourceType": "generated",
     "verified": false,
-    "lawReferences": [{ "law": "민법", "article": "제357조" }],
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제357조"
+      }
+    ],
     "lawAsOf": "2026-08-09",
     "createdAt": "2026-08-09",
     "updatedAt": "2026-08-09"
