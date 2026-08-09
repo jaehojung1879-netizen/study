@@ -43,9 +43,12 @@ jobs:
         env:
           BASE_PATH: /${{ github.event.repository.name }}/
 
-      # enablement:true lets the workflow turn Pages on itself (source = Actions).
-      # Without it the first run fails with "Get Pages site failed ... Not Found"
-      # until someone flips the switch in Settings → Pages by hand.
+      # Pages must be switched on once by a human: Settings → Pages → Source →
+      # GitHub Actions. GITHUB_TOKEN cannot create the site itself — `pages: write`
+      # grants deployment, not site creation, so enablement:true still fails with
+      # "Create Pages site failed: Resource not accessible by integration".
+      # It is kept so the run self-heals if the repository is ever granted that
+      # permission; once Pages exists this step simply reads the existing config.
       - uses: actions/configure-pages@v5
         with:
           enablement: true

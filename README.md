@@ -350,9 +350,14 @@ law-sources.json → check-law-updates.ts → 변경 감지
 
 ## GitHub Pages 배포
 
-1. 별도 설정이 필요 없다. 워크플로의 `actions/configure-pages`가 `enablement: true`로
-   Pages를 직접 켠다(Source = GitHub Actions). 조직 정책 등으로 자동 활성화가 막혀 있다면
-   저장소 **Settings → Pages → Source**를 **GitHub Actions**로 한 번만 설정하면 된다.
+1. **최초 1회는 사람이 켜야 한다.** 저장소 **Settings → Pages → Source**를
+   **GitHub Actions**로 설정한다.
+
+   워크플로에 `enablement: true`가 들어 있지만 `GITHUB_TOKEN`으로는 Pages 사이트를
+   *생성*할 수 없다(`Create Pages site failed: Resource not accessible by integration`).
+   토큰의 `pages: write`는 배포 권한이지 사이트 생성 권한이 아니다. 한 번 켜 두면
+   이후 `configure-pages`는 기존 사이트를 그대로 사용하므로 다시 만질 일이 없다.
+
 2. **기본 브랜치**에 push하면 `.github/workflows/deploy.yml`이 실행된다.
    lint → typecheck → test → 문제은행 검증 → 중복 검사 → build 순으로 진행되며,
    **하나라도 실패하면 배포되지 않는다.**
