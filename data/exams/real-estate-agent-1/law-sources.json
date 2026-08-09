@@ -1,0 +1,55 @@
+{
+  "examId": "real-estate-agent-1",
+  "recheckAfterDays": 90,
+  "sources": [
+    {
+      "law": "민법",
+      "lawId": "001706",
+      "version": "미확인 — 최초 등록",
+      "checkedAt": "2026-08-09",
+      "sourceUrl": "https://www.law.go.kr/법령/민법"
+    },
+    {
+      "law": "주택임대차보호법",
+      "version": "미확인 — 최초 등록",
+      "checkedAt": "2026-08-09",
+      "sourceUrl": "https://www.law.go.kr/법령/주택임대차보호법"
+    },
+    {
+      "law": "상가건물 임대차보호법",
+      "version": "미확인 — 최초 등록",
+      "checkedAt": "2026-08-09",
+      "sourceUrl": "https://www.law.go.kr/법령/상가건물임대차보호법"
+    },
+    {
+      "law": "집합건물의 소유 및 관리에 관한 법률",
+      "version": "미확인 — 최초 등록",
+      "checkedAt": "2026-08-09",
+      "sourceUrl": "https://www.law.go.kr/법령/집합건물의소유및관리에관한법률"
+    },
+    {
+      "law": "부동산 실권리자명의 등기에 관한 법률",
+      "version": "미확인 — 최초 등록",
+      "checkedAt": "2026-08-09",
+      "sourceUrl": "https://www.law.go.kr/법령/부동산실권리자명의등기에관한법률"
+    },
+    {
+      "law": "가등기담보 등에 관한 법률",
+      "version": "미확인 — 최초 등록",
+      "checkedAt": "2026-08-09",
+      "sourceUrl": "https://www.law.go.kr/법령/가등기담보등에관한법률"
+    },
+    {
+      "law": "부동산 거래신고 등에 관한 법률",
+      "version": "미확인 — 최초 등록",
+      "checkedAt": "2026-08-09",
+      "sourceUrl": "https://www.law.go.kr/법령/부동산거래신고등에관한법률"
+    },
+    {
+      "law": "부동산 가격공시에 관한 법률",
+      "version": "미확인 — 최초 등록",
+      "checkedAt": "2026-08-09",
+      "sourceUrl": "https://www.law.go.kr/법령/부동산가격공시에관한법률"
+    }
+  ]
+}

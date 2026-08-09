@@ -1,0 +1,9 @@
+# staging/questions
+
+AI 생성 파이프라인(`npm run generate:questions`)의 출력이 여기에 쌓입니다.
+
+- `*.json` — Generator와 Reviewer가 **모두** 통과시킨 문항
+- `*.rejected.json` — 반려된 문항과 그 사유
+
+이 폴더의 문항은 앱에 로드되지 않습니다. 사람이 법령 원문을 대조하고
+정답을 재확인한 뒤 `data/exams/<examId>/questions/`로 옮겨야 비로소 출제됩니다.

@@ -1,0 +1,133 @@
+{
+  "id": "real-estate-agent-1",
+  "name": "제37회 공인중개사 제1차 시험",
+  "shortName": "공인중개사 1차",
+  "round": 37,
+  "year": 2026,
+  "examDate": "2026-10-24",
+  "officialSource": "Q-Net 공인중개사 시험 시행계획 공고 (https://www.q-net.or.kr). 제37회 시행계획이 공고되기 전이므로 시험일은 최근 회차(제35회 2024-10-26, 제36회 2025-10-25)의 '10월 넷째 주 토요일' 관행에 따른 잠정값이다.",
+  "officialSourceCheckedAt": "2026-08-09",
+  "scheduleVerified": false,
+  "subjects": [
+    {
+      "id": "real-estate-studies",
+      "name": "부동산학개론",
+      "shortName": "학개론",
+      "examQuestionCount": 40,
+      "dailyQuestionCount": 50,
+      "accent": "teal"
+    },
+    {
+      "id": "civil-law",
+      "name": "민법 및 민사특별법 중 부동산 중개에 관련되는 규정",
+      "shortName": "민법",
+      "examQuestionCount": 40,
+      "dailyQuestionCount": 50,
+      "accent": "violet"
+    }
+  ],
+  "mock": {
+    "durationMinutes": 100,
+    "totalQuestions": 80
+  },
+  "passRule": {
+    "perSubjectMinPercent": 40,
+    "overallAverageMinPercent": 60
+  },
+  "daily": {
+    "totalQuestions": 100
+  },
+  "selectionMix": {
+    "weakness": 0.4,
+    "dueReview": 0.25,
+    "coverage": 0.15,
+    "recentWrong": 0.1,
+    "fresh": 0.1
+  },
+  "phases": [
+    {
+      "id": "expansion",
+      "label": "개념 확장기",
+      "minDaysLeft": 60,
+      "description": "전 범위 개념 학습과 커버리지를 우선합니다. 새 개념을 두려워하지 마세요."
+    },
+    {
+      "id": "consolidation",
+      "label": "취약점 보강기",
+      "minDaysLeft": 30,
+      "description": "취약영역과 기출 비중을 높입니다. 새 개념보다 구멍 메우기가 우선입니다.",
+      "mixOverrides": {
+        "weakness": 0.45,
+        "dueReview": 0.25,
+        "coverage": 0.12,
+        "recentWrong": 0.11,
+        "fresh": 0.07
+      }
+    },
+    {
+      "id": "drill",
+      "label": "오답·빈출 집중기",
+      "minDaysLeft": 14,
+      "description": "오답, 빈출 개념, 계산문제를 반복합니다.",
+      "mixOverrides": {
+        "weakness": 0.45,
+        "dueReview": 0.3,
+        "coverage": 0.08,
+        "recentWrong": 0.13,
+        "fresh": 0.04
+      },
+      "maxFreshQuestions": 10
+    },
+    {
+      "id": "final",
+      "label": "마무리 정리기",
+      "minDaysLeft": 7,
+      "description": "새로운 어려운 개념은 최소화하고 오답·기출·암기 위주로 돌립니다.",
+      "mixOverrides": {
+        "weakness": 0.42,
+        "dueReview": 0.35,
+        "coverage": 0.06,
+        "recentWrong": 0.15,
+        "fresh": 0.02
+      },
+      "maxFreshQuestions": 5,
+      "maxDifficulty": 4
+    },
+    {
+      "id": "lastcall",
+      "label": "최종 암기기",
+      "minDaysLeft": 3,
+      "description": "최종 암기 카드, 반복 오답, 법령 숫자와 판례 키워드만 봅니다.",
+      "mixOverrides": {
+        "weakness": 0.35,
+        "dueReview": 0.45,
+        "coverage": 0.03,
+        "recentWrong": 0.17,
+        "fresh": 0
+      },
+      "maxFreshQuestions": 0,
+      "maxDifficulty": 3
+    },
+    {
+      "id": "eve",
+      "label": "시험 직전",
+      "minDaysLeft": 0,
+      "description": "새 문제는 보지 않습니다. 핵심 오답노트와 암기 카드만 확인하세요.",
+      "mixOverrides": {
+        "weakness": 0.3,
+        "dueReview": 0.55,
+        "coverage": 0,
+        "recentWrong": 0.15,
+        "fresh": 0
+      },
+      "maxFreshQuestions": 0,
+      "maxDifficulty": 3
+    },
+    {
+      "id": "after",
+      "label": "시험 종료",
+      "minDaysLeft": -3650,
+      "description": "시험일이 지났습니다. 설정에서 다음 회차 시험일을 갱신하세요."
+    }
+  ]
+}

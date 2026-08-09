@@ -1,0 +1,467 @@
+{
+  "examId": "real-estate-agent-1",
+  "subjects": [
+    {
+      "subjectId": "real-estate-studies",
+      "majorTopics": [
+        {
+          "id": "res-intro",
+          "name": "부동산학 총론",
+          "minorTopics": [
+            {
+              "id": "res-intro-concept",
+              "name": "부동산의 개념과 분류",
+              "concepts": [
+                { "id": "c-complex-concept", "name": "복합개념·복합부동산" },
+                { "id": "c-land-classification", "name": "토지의 분류(택지·필지·획지 등)" },
+                { "id": "c-fixture", "name": "정착물과 동산의 구별" }
+              ]
+            },
+            {
+              "id": "res-intro-features",
+              "name": "부동산의 특성",
+              "concepts": [
+                { "id": "c-natural-features", "name": "자연적 특성(부동성·부증성·영속성·개별성)" },
+                { "id": "c-human-features", "name": "인문적 특성(용도의 다양성 등)" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "res-economics",
+          "name": "부동산 경제론",
+          "minorTopics": [
+            {
+              "id": "res-eco-demand-supply",
+              "name": "수요와 공급",
+              "concepts": [
+                { "id": "c-demand-law", "name": "수요법칙·수요량의 변화와 수요의 변화" },
+                { "id": "c-supply", "name": "공급의 결정요인과 공급곡선" },
+                { "id": "c-equilibrium", "name": "균형가격과 균형거래량" }
+              ]
+            },
+            {
+              "id": "res-eco-elasticity",
+              "name": "탄력성",
+              "concepts": [
+                { "id": "c-price-elasticity", "name": "수요·공급의 가격탄력성" },
+                { "id": "c-income-cross-elasticity", "name": "소득탄력성·교차탄력성" }
+              ]
+            },
+            {
+              "id": "res-eco-cycle",
+              "name": "부동산 경기변동",
+              "concepts": [
+                { "id": "c-cycle-phase", "name": "경기순환 국면의 특징" },
+                { "id": "c-cobweb", "name": "거미집 이론" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "res-market",
+          "name": "부동산 시장론",
+          "minorTopics": [
+            {
+              "id": "res-market-nature",
+              "name": "부동산시장의 특성과 효율성",
+              "concepts": [
+                { "id": "c-market-features", "name": "부동산시장의 특성" },
+                { "id": "c-efficient-market", "name": "효율적 시장가설" },
+                { "id": "c-allocative-efficiency", "name": "할당 효율성" }
+              ]
+            },
+            {
+              "id": "res-market-housing",
+              "name": "주택시장",
+              "concepts": [
+                { "id": "c-filtering", "name": "여과과정(filtering)" },
+                { "id": "c-residential-segregation", "name": "주거분리" }
+              ]
+            },
+            {
+              "id": "res-market-location",
+              "name": "입지 및 공간구조론",
+              "concepts": [
+                { "id": "c-rent-theory", "name": "지대이론(리카도·튀넨·마샬·알론소)" },
+                { "id": "c-urban-structure", "name": "도시공간구조론(동심원·선형·다핵심)" },
+                { "id": "c-retail-location", "name": "상권이론(레일리·컨버스·허프)" },
+                { "id": "c-industrial-location", "name": "공업입지론(베버)" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "res-policy",
+          "name": "부동산 정책론",
+          "minorTopics": [
+            {
+              "id": "res-policy-failure",
+              "name": "시장실패와 정부개입",
+              "concepts": [
+                { "id": "c-externality", "name": "외부효과" },
+                { "id": "c-public-goods", "name": "공공재와 무임승차" }
+              ]
+            },
+            {
+              "id": "res-policy-land",
+              "name": "토지정책",
+              "concepts": [
+                { "id": "c-land-regulation", "name": "토지이용규제·지역지구제" },
+                { "id": "c-land-policy-tools", "name": "개발부담금·토지비축 등 정책수단" }
+              ]
+            },
+            {
+              "id": "res-policy-housing",
+              "name": "주택정책",
+              "concepts": [
+                { "id": "c-rent-control", "name": "임대료 규제" },
+                { "id": "c-rent-subsidy", "name": "임대료 보조·공공임대" },
+                { "id": "c-price-cap", "name": "분양가 규제" }
+              ]
+            },
+            {
+              "id": "res-policy-tax",
+              "name": "조세정책",
+              "concepts": [
+                { "id": "c-tax-incidence", "name": "조세의 전가와 귀착" },
+                { "id": "c-property-tax", "name": "부동산 관련 조세의 분류" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "res-investment",
+          "name": "부동산 투자론",
+          "minorTopics": [
+            {
+              "id": "res-inv-risk",
+              "name": "투자의 위험과 수익",
+              "concepts": [
+                { "id": "c-required-return", "name": "기대수익률과 요구수익률" },
+                { "id": "c-risk-types", "name": "투자위험의 유형" },
+                { "id": "c-portfolio", "name": "포트폴리오 이론" }
+              ]
+            },
+            {
+              "id": "res-inv-tvm",
+              "name": "화폐의 시간가치",
+              "concepts": [
+                { "id": "c-present-value", "name": "현재가치·미래가치" },
+                { "id": "c-annuity-factors", "name": "연금의 현가계수·저당상수·감채기금계수" }
+              ]
+            },
+            {
+              "id": "res-inv-analysis",
+              "name": "투자분석기법",
+              "concepts": [
+                { "id": "c-npv", "name": "순현재가치(NPV)" },
+                { "id": "c-irr", "name": "내부수익률(IRR)·수익성지수" },
+                { "id": "c-ratio-analysis", "name": "비율분석(DSCR·LTV·부채비율)" },
+                { "id": "c-noi", "name": "영업수지 계산(NOI)" }
+              ]
+            },
+            {
+              "id": "res-inv-leverage",
+              "name": "지렛대효과",
+              "concepts": [{ "id": "c-leverage", "name": "정(+)·부(-)·중립적 지렛대" }]
+            }
+          ]
+        },
+        {
+          "id": "res-finance",
+          "name": "부동산 금융론",
+          "minorTopics": [
+            {
+              "id": "res-fin-mortgage",
+              "name": "저당금융",
+              "concepts": [
+                { "id": "c-fixed-variable", "name": "고정금리와 변동금리" },
+                { "id": "c-amortization", "name": "원리금균등·원금균등·체증식 상환" }
+              ]
+            },
+            {
+              "id": "res-fin-securitization",
+              "name": "부동산 증권화",
+              "concepts": [
+                { "id": "c-mbs", "name": "MBS의 유형(MPTS·MBB·MPTB·CMO)" },
+                { "id": "c-reits", "name": "부동산투자회사(REITs)" }
+              ]
+            },
+            {
+              "id": "res-fin-other",
+              "name": "기타 부동산 금융",
+              "concepts": [
+                { "id": "c-project-financing", "name": "프로젝트 파이낸싱" },
+                { "id": "c-reverse-mortgage", "name": "주택연금(역모기지)" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "res-development",
+          "name": "부동산 개발 및 관리론",
+          "minorTopics": [
+            {
+              "id": "res-dev-development",
+              "name": "부동산 개발",
+              "concepts": [
+                { "id": "c-dev-process", "name": "개발의 단계와 타당성분석" },
+                { "id": "c-dev-methods", "name": "개발방식(자체·지주공동·신탁·등가교환)" },
+                { "id": "c-bto-btl", "name": "민간투자방식(BTO·BTL)" }
+              ]
+            },
+            {
+              "id": "res-dev-management",
+              "name": "부동산 관리",
+              "concepts": [
+                { "id": "c-management-types", "name": "자가·위탁·혼합관리" },
+                { "id": "c-building-lifecycle", "name": "건물의 생애주기" }
+              ]
+            },
+            {
+              "id": "res-dev-marketing",
+              "name": "부동산 마케팅",
+              "concepts": [
+                { "id": "c-marketing-strategy", "name": "시장점유·고객점유·관계마케팅" },
+                { "id": "c-stp-4p", "name": "STP 전략과 4P 믹스" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "res-appraisal",
+          "name": "부동산 감정평가론",
+          "minorTopics": [
+            {
+              "id": "res-app-basics",
+              "name": "감정평가의 기초",
+              "concepts": [
+                { "id": "c-value-principles", "name": "부동산 가격제원칙" },
+                { "id": "c-region-individual-analysis", "name": "지역분석과 개별분석" }
+              ]
+            },
+            {
+              "id": "res-app-methods",
+              "name": "감정평가 3방식",
+              "concepts": [
+                { "id": "c-cost-approach", "name": "원가법·적산법" },
+                { "id": "c-sales-comparison", "name": "거래사례비교법·임대사례비교법" },
+                { "id": "c-income-approach", "name": "수익환원법·환원이율" }
+              ]
+            },
+            {
+              "id": "res-app-disclosure",
+              "name": "부동산 가격공시제도",
+              "concepts": [
+                { "id": "c-standard-land-price", "name": "표준지공시지가·개별공시지가" },
+                { "id": "c-housing-price", "name": "주택가격 공시제도" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subjectId": "civil-law",
+      "majorTopics": [
+        {
+          "id": "civ-general",
+          "name": "민법총칙",
+          "minorTopics": [
+            {
+              "id": "civ-gen-juristic-act",
+              "name": "법률행위",
+              "concepts": [
+                { "id": "c-antisocial", "name": "반사회질서의 법률행위(제103조)" },
+                { "id": "c-unfair-act", "name": "불공정한 법률행위(제104조)" },
+                { "id": "c-interpretation", "name": "법률행위의 해석" }
+              ]
+            },
+            {
+              "id": "civ-gen-declaration",
+              "name": "의사표시",
+              "concepts": [
+                { "id": "c-non-genuine", "name": "진의 아닌 의사표시(제107조)" },
+                { "id": "c-fictitious", "name": "통정허위표시(제108조)" },
+                { "id": "c-mistake", "name": "착오에 의한 의사표시(제109조)" },
+                { "id": "c-fraud-duress", "name": "사기·강박에 의한 의사표시(제110조)" },
+                { "id": "c-third-party-bona-fide", "name": "선의의 제3자 보호" }
+              ]
+            },
+            {
+              "id": "civ-gen-agency",
+              "name": "대리",
+              "concepts": [
+                { "id": "c-agency-power", "name": "대리권의 범위와 소멸" },
+                { "id": "c-unauthorized-agency", "name": "무권대리와 추인" },
+                { "id": "c-apparent-agency", "name": "표현대리(제125·126·129조)" },
+                { "id": "c-subagent", "name": "복대리" }
+              ]
+            },
+            {
+              "id": "civ-gen-void-voidable",
+              "name": "무효와 취소",
+              "concepts": [
+                { "id": "c-void", "name": "무효행위의 전환·추인" },
+                { "id": "c-voidable", "name": "취소권자와 취소의 효과" },
+                { "id": "c-floating-void", "name": "유동적 무효(토지거래허가구역)" }
+              ]
+            },
+            {
+              "id": "civ-gen-condition",
+              "name": "조건과 기한",
+              "concepts": [
+                { "id": "c-condition", "name": "정지조건과 해제조건" },
+                { "id": "c-time-limit", "name": "기한과 기한의 이익" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "civ-property",
+          "name": "물권법",
+          "minorTopics": [
+            {
+              "id": "civ-prop-general",
+              "name": "물권법 총론",
+              "concepts": [
+                { "id": "c-property-right-types", "name": "물권법정주의와 물권의 종류" },
+                { "id": "c-real-claim", "name": "물권적 청구권" }
+              ]
+            },
+            {
+              "id": "civ-prop-change",
+              "name": "물권의 변동",
+              "concepts": [
+                { "id": "c-registration", "name": "등기의 효력과 추정력" },
+                { "id": "c-intermediate-omission", "name": "중간생략등기" },
+                { "id": "c-change-by-law", "name": "법률규정에 의한 물권변동(제187조)" }
+              ]
+            },
+            {
+              "id": "civ-prop-possession",
+              "name": "점유권",
+              "concepts": [
+                { "id": "c-possession-types", "name": "자주점유·타주점유, 선의·악의 점유" },
+                { "id": "c-possessor-restorer", "name": "점유자와 회복자의 관계" },
+                { "id": "c-possession-claim", "name": "점유보호청구권" }
+              ]
+            },
+            {
+              "id": "civ-prop-ownership",
+              "name": "소유권",
+              "concepts": [
+                { "id": "c-acquisitive-prescription", "name": "점유취득시효·등기부취득시효" },
+                { "id": "c-co-ownership", "name": "공유·합유·총유" },
+                { "id": "c-neighbouring", "name": "상린관계와 주위토지통행권" }
+              ]
+            },
+            {
+              "id": "civ-prop-usufruct",
+              "name": "용익물권",
+              "concepts": [
+                { "id": "c-superficies", "name": "지상권" },
+                { "id": "c-servitude", "name": "지역권" },
+                { "id": "c-chonsegwon", "name": "전세권" }
+              ]
+            },
+            {
+              "id": "civ-prop-security",
+              "name": "담보물권",
+              "concepts": [
+                { "id": "c-lien", "name": "유치권" },
+                { "id": "c-mortgage", "name": "저당권" },
+                { "id": "c-revolving-mortgage", "name": "근저당권" },
+                { "id": "c-statutory-superficies", "name": "법정지상권·관습법상 법정지상권" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "civ-contract",
+          "name": "계약법",
+          "minorTopics": [
+            {
+              "id": "civ-con-general",
+              "name": "계약총론",
+              "concepts": [
+                { "id": "c-contract-formation", "name": "계약의 성립(청약과 승낙)" },
+                { "id": "c-simultaneous-performance", "name": "동시이행의 항변권" },
+                { "id": "c-risk-bearing", "name": "위험부담" },
+                { "id": "c-third-party-contract", "name": "제3자를 위한 계약" },
+                { "id": "c-rescission", "name": "계약의 해제·해지" }
+              ]
+            },
+            {
+              "id": "civ-con-sale",
+              "name": "매매",
+              "concepts": [
+                { "id": "c-earnest-money", "name": "계약금과 해약금" },
+                { "id": "c-warranty", "name": "매도인의 담보책임" },
+                { "id": "c-repurchase", "name": "환매와 예약완결권" }
+              ]
+            },
+            {
+              "id": "civ-con-lease",
+              "name": "교환·임대차",
+              "concepts": [
+                { "id": "c-exchange", "name": "교환계약" },
+                { "id": "c-lease-general", "name": "임대차의 효력" },
+                { "id": "c-sublease", "name": "임차권의 양도와 전대" },
+                { "id": "c-lease-cost-claim", "name": "필요비·유익비 상환청구권과 부속물매수청구권" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "civ-special",
+          "name": "민사특별법",
+          "minorTopics": [
+            {
+              "id": "civ-sp-housing-lease",
+              "name": "주택임대차보호법",
+              "concepts": [
+                { "id": "c-housing-opposing-power", "name": "대항력(인도+주민등록)" },
+                { "id": "c-housing-priority", "name": "우선변제권과 최우선변제권" },
+                { "id": "c-housing-renewal", "name": "계약갱신요구권과 차임증액 제한" }
+              ]
+            },
+            {
+              "id": "civ-sp-commercial-lease",
+              "name": "상가건물 임대차보호법",
+              "concepts": [
+                { "id": "c-commercial-scope", "name": "적용범위(환산보증금)" },
+                { "id": "c-commercial-renewal", "name": "계약갱신요구권(10년)" },
+                { "id": "c-premium", "name": "권리금 회수기회 보호" }
+              ]
+            },
+            {
+              "id": "civ-sp-condominium",
+              "name": "집합건물법",
+              "concepts": [
+                { "id": "c-sectional-ownership", "name": "구분소유권과 전유·공용부분" },
+                { "id": "c-site-right", "name": "대지사용권과 분리처분금지" }
+              ]
+            },
+            {
+              "id": "civ-sp-provisional-security",
+              "name": "가등기담보법",
+              "concepts": [
+                { "id": "c-provisional-security", "name": "가등기담보의 실행과 청산절차" }
+              ]
+            },
+            {
+              "id": "civ-sp-real-name",
+              "name": "부동산실명법",
+              "concepts": [
+                { "id": "c-title-trust-types", "name": "명의신탁의 유형과 효력" },
+                { "id": "c-title-trust-exception", "name": "종중·배우자 명의신탁의 특례" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

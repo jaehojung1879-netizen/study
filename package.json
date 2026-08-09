@@ -1,0 +1,50 @@
+{
+  "name": "study-adaptive-exam-platform",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Adaptive exam learning platform — 공인중개사 1차 (제37회, 2026) 대비 적응형 학습 시스템",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:questions": "tsx scripts/validate-questions.ts",
+    "check:duplicates": "tsx scripts/check-duplicates.ts",
+    "check:law-updates": "tsx scripts/check-law-updates.ts",
+    "generate:daily-set": "tsx scripts/generate-daily-set.ts",
+    "generate:questions": "tsx scripts/generate-questions.ts",
+    "verify": "npm run lint && npm run test && npm run validate:questions && npm run check:duplicates && npm run build"
+  },
+  "dependencies": {
+    "dexie": "^4.0.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^22.10.6",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "fake-indexeddb": "^6.0.0",
+    "jsdom": "^25.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.11",
+    "vite-plugin-pwa": "^0.21.1",
+    "vitest": "^2.1.8"
+  }
+}
