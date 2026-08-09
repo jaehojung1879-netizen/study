@@ -2,7 +2,7 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStudy } from '../../app/StudyProvider';
-import { ExplanationBody } from '../../components/QuestionCard';
+import { ExplanationBody } from '../../components/Explanation';
 import { Banner, CHOICE_MARK, Empty, SectionTitle, SourceBadge } from '../../components/ui';
 import type { Question } from '../../exam/types';
 import type { Attempt, QuestionState } from '../../storage/types';
@@ -259,7 +259,11 @@ export function ReviewPage(): JSX.Element {
                             정답 {CHOICE_MARK(item.question.answer)}{' '}
                             {item.question.choices[item.question.answer]}
                           </p>
-                          <ExplanationBody question={item.question} index={study.index} />
+                          <ExplanationBody
+                            question={item.question}
+                            index={study.index}
+                            selected={item.lastSelected >= 0 ? item.lastSelected : undefined}
+                          />
                         </div>
                       ) : null}
                     </div>

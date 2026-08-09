@@ -6,6 +6,7 @@
  * concatenated here.
  */
 import type {
+  ConceptNote,
   ExamBundle,
   ExamConfig,
   LawUpdateEvent,
@@ -35,6 +36,11 @@ const updateModules = import.meta.glob('/data/exams/*/updates/*.json', {
   import: 'default',
 }) as Record<string, LawUpdateEvent[]>;
 
+const conceptNoteModules = import.meta.glob('/data/exams/*/concept-notes/*.json', {
+  eager: true,
+  import: 'default',
+}) as Record<string, ConceptNote[]>;
+
 function examIdFromPath(path: string): string {
   return path.split('/')[3] ?? '';
 }
@@ -55,8 +61,12 @@ for (const [path, config] of Object.entries(configModules)) {
   const updates = Object.entries(updateModules)
     .filter(([p]) => examIdFromPath(p) === id)
     .flatMap(([, list]) => list);
+  const conceptNotes = Object.entries(conceptNoteModules)
+    .filter(([p]) => examIdFromPath(p) === id)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .flatMap(([, list]) => list);
 
-  bundles.set(id, { config, taxonomy, questions, updates });
+  bundles.set(id, { config, taxonomy, questions, conceptNotes, updates });
 }
 
 export function listExams(): ExamConfig[] {
@@ -80,44 +90,59 @@ export interface TopicPath {
   minorTopicName: string;
 }
 
+/** A concept plus everything needed to render it without walking the tree again. */
+export interface ConceptEntry {
+  conceptId: string;
+  name: string;
+  path: TopicPath;
+}
+
 /** Denormalised lookups over one exam bundle; built once and shared by every screen. */
 export class ExamIndex {
   readonly config: ExamConfig;
   readonly taxonomy: Taxonomy;
   readonly questions: Question[];
+  readonly conceptNotes: ConceptNote[];
   readonly updates: LawUpdateEvent[];
 
   private byId: Map<string, Question>;
   private topicPaths: Map<string, TopicPath>;
   private conceptNames: Map<string, string>;
   private conceptToMinor: Map<string, string>;
+  private conceptEntries: ConceptEntry[];
+  private notesByConcept: Map<string, ConceptNote>;
 
   constructor(bundle: ExamBundle) {
     this.config = bundle.config;
     this.taxonomy = bundle.taxonomy;
     this.questions = bundle.questions;
+    this.conceptNotes = bundle.conceptNotes;
     this.updates = bundle.updates;
     this.byId = new Map(bundle.questions.map((q) => [q.id, q]));
     this.topicPaths = new Map();
     this.conceptNames = new Map();
     this.conceptToMinor = new Map();
+    this.conceptEntries = [];
+    this.notesByConcept = new Map(bundle.conceptNotes.map((n) => [n.conceptId, n]));
 
     for (const subject of bundle.taxonomy.subjects) {
       const subjectName =
         bundle.config.subjects.find((s) => s.id === subject.subjectId)?.name ?? subject.subjectId;
       for (const major of subject.majorTopics) {
         for (const minor of major.minorTopics) {
-          this.topicPaths.set(minor.id, {
+          const path: TopicPath = {
             subjectId: subject.subjectId,
             subjectName,
             majorTopicId: major.id,
             majorTopicName: major.name,
             minorTopicId: minor.id,
             minorTopicName: minor.name,
-          });
+          };
+          this.topicPaths.set(minor.id, path);
           for (const concept of minor.concepts) {
             this.conceptNames.set(concept.id, concept.name);
             this.conceptToMinor.set(concept.id, minor.id);
+            this.conceptEntries.push({ conceptId: concept.id, name: concept.name, path });
           }
         }
       }
@@ -153,6 +178,19 @@ export class ExamIndex {
 
   minorTopicIdForConcept(conceptId: string): string | undefined {
     return this.conceptToMinor.get(conceptId);
+  }
+
+  /** Every concept in taxonomy order — the spine of the 개념노트 screen. */
+  concepts(): ConceptEntry[] {
+    return this.conceptEntries;
+  }
+
+  concept(conceptId: string): ConceptEntry | undefined {
+    return this.conceptEntries.find((c) => c.conceptId === conceptId);
+  }
+
+  conceptNote(conceptId: string): ConceptNote | undefined {
+    return this.notesByConcept.get(conceptId);
   }
 
   subjectName(subjectId: string): string {

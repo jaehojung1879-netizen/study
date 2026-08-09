@@ -8,6 +8,7 @@ const NAV = [
   { to: '/review', label: '오답', icon: '↺' },
   { to: '/weakness', label: '취약영역', icon: '◔' },
   { to: '/mock', label: '모의시험', icon: '⏱' },
+  { to: '/notes', label: '개념노트', icon: '▤' },
   { to: '/questions', label: '문제은행', icon: '⌕' },
 ];
 

@@ -1,7 +1,7 @@
 /** /questions — searchable question bank browser (§27). */
 import { useMemo, useState } from 'react';
 import { useStudy } from '../../app/StudyProvider';
-import { ExplanationBody } from '../../components/QuestionCard';
+import { ExplanationBody } from '../../components/Explanation';
 import { CHOICE_MARK, Empty, QUESTION_TYPE_LABEL, SectionTitle, SourceBadge } from '../../components/ui';
 import type { Question } from '../../exam/types';
 

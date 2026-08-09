@@ -139,6 +139,57 @@ describe('daily practice flow', () => {
   }, 45_000);
 });
 
+describe('explanation and concept notes', () => {
+  it('explains every choice and links each concept to its note', async () => {
+    const user = userEvent.setup();
+    const { router } = renderApp('/practice');
+
+    await screen.findByRole('heading', { name: /오늘의 \d+문제/ }, { timeout: 5000 });
+    await user.click(await screen.findByRole('button', { name: /시작하기/ }));
+
+    const choices = await screen.findAllByRole('button', { name: /^[①②③④⑤]/ });
+    const choiceCount = choices.length;
+    await user.click(choices[choices.length - 1]);
+    await user.click(await screen.findByRole('button', { name: /확실함/ }));
+    await screen.findByRole('status');
+
+    // Every choice is explained, not just the answer (§10).
+    expect(screen.getByText(/선지별 해설/)).toBeInTheDocument();
+    const notes = screen.getByText(/선지별 해설/).parentElement!.querySelectorAll('.choice-note');
+    expect(notes).toHaveLength(choiceCount);
+    // The answer and the learner's own pick are both marked.
+    expect(within(screen.getByText(/선지별 해설/).parentElement!).getAllByText(/정답/).length).toBeGreaterThan(0);
+
+    // 관련 개념 is a link into the notebook, not a dead chip (§13).
+    const conceptLink = within(
+      screen.getByText(/관련 개념/).parentElement!,
+    ).getAllByRole('link')[0];
+    await user.click(conceptLink);
+    await waitFor(() => expect(router.state.location.pathname).toMatch(/^\/notes\/c-/));
+
+    // The concept page opens with the note and the questions that drill it.
+    await screen.findByRole('heading', { name: '개념노트', level: 2 }, { timeout: 5000 });
+    expect(screen.getByText('한눈에')).toBeInTheDocument();
+    expect(screen.getByText(/이 개념을 묻는 문항/)).toBeInTheDocument();
+  }, 45_000);
+
+  it('renders the notebook at both lengths', async () => {
+    const user = userEvent.setup();
+    renderApp('/notes');
+
+    await screen.findByRole('heading', { name: '개념노트' }, { timeout: 5000 });
+    // Short version is the default and shows summaries only.
+    expect(screen.getByRole('button', { name: '짧은 버전' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+    expect(screen.queryByText('시험에 나오는 함정')).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: '긴 버전' }));
+    expect(await screen.findAllByText('시험에 나오는 함정')).not.toHaveLength(0);
+  }, 45_000);
+});
+
 describe('navigation', () => {
   it('renders every top-level route', async () => {
     const cases: Array<[string, RegExp]> = [
@@ -146,6 +197,7 @@ describe('navigation', () => {
       ['/weakness', /취약영역 분석/],
       ['/mock', /실전 모의시험/],
       ['/questions', /문제은행/],
+      ['/notes', /개념노트/],
       ['/updates', /법령 · 판례 · 시험정보 업데이트/],
       ['/settings', /설정/],
     ];

@@ -5,7 +5,7 @@
  * (`scripts/validate-questions.ts`, run under tsx) and the unit tests share
  * exactly the same rules.
  */
-import type { ExamConfig, Question, SourceType, Taxonomy } from './types';
+import type { ConceptNote, ExamConfig, Question, SourceType, Taxonomy } from './types';
 
 export interface Issue {
   level: 'error' | 'warning';
@@ -24,6 +24,8 @@ const VALID_SOURCE_TYPES: SourceType[] = [
 const MIN_CHOICES = 4;
 const MAX_CHOICES = 6;
 const MIN_EXPLANATION_LENGTH = 20;
+const MIN_CHOICE_EXPLANATION_LENGTH = 8;
+const MIN_NOTE_SUMMARY_LINES = 2;
 
 export interface TaxonomyIndex {
   subjects: Set<string>;
@@ -135,6 +137,27 @@ export function validateQuestionBank(
     if (!q.explanation || q.explanation.trim().length < MIN_EXPLANATION_LENGTH) {
       push('error', q.id, 'explanation', `해설이 없거나 너무 짧습니다(${MIN_EXPLANATION_LENGTH}자 이상).`);
     }
+
+    // --- per-choice explanations (§10) ---
+    // Knowing the answer is not the same as knowing why the other four fail,
+    // so every choice gets its own line.
+    if (!q.choiceExplanations?.length) {
+      push('warning', q.id, 'choice-explanations', '선지별 해설이 없어 오답 리뷰에서 정답 선지만 설명됩니다.');
+    } else if (q.choiceExplanations.length !== (q.choices?.length ?? 0)) {
+      push(
+        'error',
+        q.id,
+        'choice-explanation-count',
+        `선지별 해설 개수(${q.choiceExplanations.length})가 선택지 개수(${q.choices?.length ?? 0})와 다릅니다.`,
+      );
+    } else if (q.choiceExplanations.some((c) => !c || c.trim().length < MIN_CHOICE_EXPLANATION_LENGTH)) {
+      push(
+        'error',
+        q.id,
+        'choice-explanation-text',
+        `비었거나 ${MIN_CHOICE_EXPLANATION_LENGTH}자 미만인 선지 해설이 있습니다.`,
+      );
+    }
     if (!q.difficulty || q.difficulty < 1 || q.difficulty > 5) {
       push('error', q.id, 'difficulty', `difficulty는 1~5여야 합니다 (현재 ${q.difficulty}).`);
     }
@@ -185,6 +208,90 @@ export function validateQuestionBank(
 
     if (!q.createdAt || !q.updatedAt) {
       push('warning', q.id, 'timestamps', 'createdAt/updatedAt이 비어 있습니다.');
+    }
+  }
+
+  return issues;
+}
+
+/**
+ * Concept-note validation (§13).
+ *
+ * A note is a teaching surface, so the bar is different from a question: the
+ * short version has to survive on its own (the user reads only that in the last
+ * week), and every link out of it has to resolve.
+ */
+export function validateConceptNotes(
+  notes: ConceptNote[],
+  taxonomy: Taxonomy,
+  config: ExamConfig,
+  questions: Question[] = [],
+): Issue[] {
+  const issues: Issue[] = [];
+  const tax = indexTaxonomy(taxonomy);
+  const seen = new Set<string>();
+
+  const push = (level: Issue['level'], id: string, rule: string, message: string): void => {
+    issues.push({ level, questionId: id, rule, message });
+  };
+
+  for (const note of notes) {
+    const id = note.conceptId || '(no conceptId)';
+    if (!note.conceptId) {
+      push('error', id, 'note-concept-id', 'conceptId가 없습니다.');
+      continue;
+    }
+    if (seen.has(note.conceptId)) {
+      push('error', id, 'note-unique', `같은 개념의 노트가 두 번 있습니다: ${note.conceptId}`);
+    }
+    seen.add(note.conceptId);
+
+    if (note.examId !== config.id) {
+      push('error', id, 'note-exam-id', `examId가 ${config.id}와 다릅니다 (${note.examId}).`);
+    }
+    if (!tax.concepts.has(note.conceptId)) {
+      push('error', id, 'note-concept-exists', `taxonomy에 없는 conceptId: ${note.conceptId}`);
+    }
+    if (!note.headline || note.headline.trim().length < 10) {
+      push('error', id, 'note-headline', '한 줄 정의(headline)가 없거나 너무 짧습니다.');
+    }
+    if (!Array.isArray(note.summary) || note.summary.length < MIN_NOTE_SUMMARY_LINES) {
+      push('error', id, 'note-summary', `짧은 버전은 ${MIN_NOTE_SUMMARY_LINES}줄 이상이어야 합니다.`);
+    }
+    if (!Array.isArray(note.sections) || note.sections.length === 0) {
+      push('error', id, 'note-sections', '긴 버전(sections)이 비어 있습니다.');
+    } else {
+      for (const section of note.sections) {
+        if (!section.heading?.trim() || !section.body?.length) {
+          push('error', id, 'note-section-body', `내용이 빈 섹션이 있습니다: ${section.heading || '(제목 없음)'}`);
+        }
+      }
+    }
+    if (note.comparison) {
+      const width = note.comparison.columns.length;
+      if (width < 2) push('error', id, 'note-comparison', '비교표는 열이 2개 이상이어야 합니다.');
+      const ragged = note.comparison.rows.filter((row) => row.length !== width);
+      if (ragged.length) {
+        push('error', id, 'note-comparison-shape', `비교표의 열 수가 맞지 않는 행이 ${ragged.length}개 있습니다.`);
+      }
+    }
+    if (note.lawReferences?.length && !note.lawAsOf) {
+      push('error', id, 'note-law-as-of', 'lawReferences가 있으면 lawAsOf(법령 확인일)가 필요합니다.');
+    }
+    for (const related of note.relatedConceptIds ?? []) {
+      if (!tax.concepts.has(related)) {
+        push('error', id, 'note-related-exists', `taxonomy에 없는 relatedConceptId: ${related}`);
+      }
+    }
+  }
+
+  // A concept that questions already drill but no note explains is the gap the
+  // user actually hits: they get it wrong, tap 관련 개념, and find nothing.
+  const drilled = new Set(questions.flatMap((q) => q.conceptIds));
+  for (const conceptId of drilled) {
+    if (!tax.concepts.has(conceptId)) continue;
+    if (!seen.has(conceptId)) {
+      push('warning', conceptId, 'note-coverage', `문항은 있으나 개념노트가 없습니다: ${conceptId}`);
     }
   }
 

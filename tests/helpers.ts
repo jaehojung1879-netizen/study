@@ -1,4 +1,4 @@
-import type { ExamConfig, Question, Taxonomy } from '../src/exam/types';
+import type { ConceptNote, ExamConfig, Question, Taxonomy } from '../src/exam/types';
 import type { Attempt, Confidence, QuestionState } from '../src/storage/types';
 
 let counter = 0;
@@ -21,6 +21,18 @@ export function makeQuestion(overrides: Partial<Question> = {}): Question {
     sourceType: 'generated',
     verified: false,
     createdAt: '2026-01-01',
+    updatedAt: '2026-01-01',
+    ...overrides,
+  };
+}
+
+export function makeConceptNote(overrides: Partial<ConceptNote> = {}): ConceptNote {
+  return {
+    examId: 'test-exam',
+    conceptId: 'concept-a',
+    headline: '이 개념이 무엇을 결정하는지 한 문장으로 적은 정의입니다.',
+    summary: ['짧은 버전 첫 줄입니다.', '짧은 버전 둘째 줄입니다.'],
+    sections: [{ heading: '기본 구조', body: ['긴 버전의 본문 한 단락입니다.'] }],
     updatedAt: '2026-01-01',
     ...overrides,
   };

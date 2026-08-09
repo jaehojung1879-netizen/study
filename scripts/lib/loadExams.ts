@@ -3,12 +3,19 @@
  *
  * The app uses `import.meta.glob` (bundler), but scripts run under tsx with no
  * bundler, so they read the same folders directly. Both paths must agree on the
- * layout: `data/exams/<examId>/{exam.json,taxonomy.json,questions/*.json,updates/*.json}`.
+ * layout: `data/exams/<examId>/{exam.json,taxonomy.json,questions/*.json,
+ * concept-notes/*.json,updates/*.json}`.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import type { ExamConfig, LawUpdateEvent, Question, Taxonomy } from '../../src/exam/types';
+import type {
+  ConceptNote,
+  ExamConfig,
+  LawUpdateEvent,
+  Question,
+  Taxonomy,
+} from '../../src/exam/types';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const REPO_ROOT = path.resolve(here, '..', '..');
@@ -22,6 +29,9 @@ export interface LoadedExam {
   questions: Question[];
   /** Which file each question came from, for actionable error messages. */
   questionFiles: Map<string, string>;
+  conceptNotes: ConceptNote[];
+  /** Which file each concept note came from, keyed by conceptId. */
+  conceptNoteFiles: Map<string, string>;
   updates: LawUpdateEvent[];
 }
 
@@ -64,6 +74,23 @@ export function loadExam(examId: string): LoadedExam {
     }
   }
 
+  const conceptNotes: ConceptNote[] = [];
+  const conceptNoteFiles = new Map<string, string>();
+  const notesDir = path.join(dir, 'concept-notes');
+  if (fs.existsSync(notesDir)) {
+    for (const file of fs.readdirSync(notesDir).filter((f) => f.endsWith('.json')).sort()) {
+      const full = path.join(notesDir, file);
+      const parsed = readJson<ConceptNote[]>(full);
+      if (!Array.isArray(parsed)) {
+        throw new Error(`${path.relative(REPO_ROOT, full)}: 최상위가 배열이어야 합니다.`);
+      }
+      for (const note of parsed) {
+        conceptNotes.push(note);
+        conceptNoteFiles.set(note.conceptId, path.relative(REPO_ROOT, full));
+      }
+    }
+  }
+
   const updates: LawUpdateEvent[] = [];
   const updatesDir = path.join(dir, 'updates');
   if (fs.existsSync(updatesDir)) {
@@ -73,7 +100,17 @@ export function loadExam(examId: string): LoadedExam {
     }
   }
 
-  return { examId, dir, config, taxonomy, questions, questionFiles, updates };
+  return {
+    examId,
+    dir,
+    config,
+    taxonomy,
+    questions,
+    questionFiles,
+    conceptNotes,
+    conceptNoteFiles,
+    updates,
+  };
 }
 
 export function loadAllExams(): LoadedExam[] {

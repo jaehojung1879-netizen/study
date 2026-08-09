@@ -67,6 +67,15 @@ export interface Question {
   answer: number;
 
   explanation: string;
+  /**
+   * Why each choice is right or wrong — one entry per `choices` entry, same order.
+   *
+   * The answer alone does not teach anything: most items are built so that two
+   * choices look defensible, and the learner needs to know why the one they
+   * picked fails. Optional only so older items keep loading; new items must
+   * supply it (validation warns when it is missing, §19).
+   */
+  choiceExplanations?: string[];
   /** One line worth memorising verbatim. */
   memoryTip?: string;
   /** The trap this item is built around. */
@@ -183,6 +192,55 @@ export interface ConceptNode {
   name: string;
 }
 
+/** One block of the long-form note. */
+export interface ConceptNoteSection {
+  heading: string;
+  /** Each entry renders as its own paragraph/bullet. */
+  body: string[];
+}
+
+/**
+ * Side-by-side table for the pairs the exam deliberately swaps
+ * (지상물 vs 부속물매수청구권, 해제 전 vs 해제 후 제3자, …).
+ */
+export interface ConceptComparison {
+  title?: string;
+  /** First column is the row label. */
+  columns: string[];
+  rows: string[][];
+}
+
+/**
+ * The study note behind one concept (§13).
+ *
+ * Every note carries both lengths on purpose: `summary` is what you re-read on
+ * the train the week before the exam, `sections` is what you read the first
+ * time you get the concept wrong. The app never generates one from the other —
+ * a compressed long note reads like filler, and an inflated short note buries
+ * the point.
+ */
+export interface ConceptNote {
+  examId: string;
+  conceptId: string;
+  /** One sentence: what this concept decides, in exam terms. */
+  headline: string;
+  /** 짧은 버전 — 3~6 lines, each independently memorable. */
+  summary: string[];
+  /** 긴 버전 — full note, ordered as it should be read. */
+  sections: ConceptNoteSection[];
+  comparison?: ConceptComparison;
+  /** The mistakes this concept is examined through. */
+  traps?: string[];
+  /** Sentences worth memorising verbatim. */
+  mnemonics?: string[];
+  lawReferences?: LawReference[];
+  precedents?: PrecedentReference[];
+  lawAsOf?: string;
+  /** Concepts to read next — rendered as links at the bottom of the note. */
+  relatedConceptIds?: string[];
+  updatedAt: string;
+}
+
 export interface MinorTopicNode {
   id: string;
   name: string;
@@ -210,6 +268,7 @@ export interface ExamBundle {
   config: ExamConfig;
   taxonomy: Taxonomy;
   questions: Question[];
+  conceptNotes: ConceptNote[];
   updates: LawUpdateEvent[];
 }
 
