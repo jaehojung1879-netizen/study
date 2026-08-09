@@ -351,9 +351,11 @@ law-sources.json → check-law-updates.ts → 변경 감지
 ## GitHub Pages 배포
 
 1. 저장소 **Settings → Pages → Source**를 **GitHub Actions**로 설정한다.
-2. `main`에 push하면 `.github/workflows/deploy.yml`이 실행된다.
+2. **기본 브랜치**에 push하면 `.github/workflows/deploy.yml`이 실행된다.
    lint → typecheck → test → 문제은행 검증 → 중복 검사 → build 순으로 진행되며,
    **하나라도 실패하면 배포되지 않는다.**
+   (워크플로는 브랜치 이름을 고정하지 않고 `github.event.repository.default_branch`와
+   비교하므로, 나중에 기본 브랜치를 `main`으로 바꿔도 수정할 필요가 없다.)
 3. 배포 주소: `https://<owner>.github.io/<repo>/`
 
 `BASE_PATH`는 워크플로에서 저장소 이름으로 자동 설정된다.
