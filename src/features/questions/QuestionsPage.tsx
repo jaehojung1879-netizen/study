@@ -13,6 +13,8 @@ export function QuestionsPage(): JSX.Element {
   const [subjectId, setSubjectId] = useState('all');
   const [majorTopicId, setMajorTopicId] = useState('all');
   const [type, setType] = useState('all');
+  const [sourceType, setSourceType] = useState('all');
+  const [sourceYear, setSourceYear] = useState('all');
   const [expanded, setExpanded] = useState<string | null>(null);
   const [limit, setLimit] = useState(PAGE_SIZE);
 
@@ -30,6 +32,8 @@ export function QuestionsPage(): JSX.Element {
           q.explanation,
           q.memoryTip ?? '',
           q.trap ?? '',
+          q.sourceTitle ?? '',
+          q.sourceExamYear?.toString() ?? '',
           conceptNames,
           study.index.breadcrumb(q),
           (q.lawReferences ?? []).map((l) => `${l.law} ${l.article ?? ''}`).join(' '),
@@ -47,11 +51,33 @@ export function QuestionsPage(): JSX.Element {
       if (subjectId !== 'all' && q.subjectId !== subjectId) return false;
       if (majorTopicId !== 'all' && q.majorTopicId !== majorTopicId) return false;
       if (type !== 'all' && q.questionType !== type) return false;
+      if (sourceType !== 'all' && q.sourceType !== sourceType) return false;
+      if (sourceYear !== 'all' && q.sourceExamYear !== Number(sourceYear)) return false;
       if (terms.length === 0) return true;
       const haystack = searchIndex.get(q.id) ?? '';
       return terms.every((term) => haystack.includes(term));
     });
-  }, [study.index.questions, searchIndex, query, subjectId, majorTopicId, type]);
+  }, [
+    study.index.questions,
+    searchIndex,
+    query,
+    subjectId,
+    majorTopicId,
+    type,
+    sourceType,
+    sourceYear,
+  ]);
+
+  const sourceYears = useMemo(
+    () =>
+      [...new Set(study.index.questions.flatMap((q) => (q.sourceExamYear ? [q.sourceExamYear] : [])))].sort(
+        (a, b) => b - a,
+      ),
+    [study.index.questions],
+  );
+  const officialCount = study.index.questions.filter(
+    (q) => q.sourceType === 'official_past_exam' && q.verified,
+  ).length;
 
   const majorTopics = subjectId === 'all' ? [] : study.index.majorTopics(subjectId);
 
@@ -60,7 +86,8 @@ export function QuestionsPage(): JSX.Element {
       <section>
         <h1>문제은행</h1>
         <p className="small muted" style={{ marginTop: 4 }}>
-          전체 {study.index.questions.length}문항. 개념·법조문·해설 전체를 검색합니다.
+          전체 {study.index.questions.length}문항 · 공식 기출 {officialCount}문항. 개념·법조문·해설 전체를
+          검색합니다.
         </p>
       </section>
 
@@ -100,6 +127,42 @@ export function QuestionsPage(): JSX.Element {
               {Object.entries(QUESTION_TYPE_LABEL).map(([key, label]) => (
                 <option key={key} value={key}>
                   {label}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div className="grid grid--2">
+          <label className="field">
+            출처
+            <select
+              value={sourceType}
+              onChange={(e) => {
+                setSourceType(e.target.value);
+                setLimit(PAGE_SIZE);
+              }}
+            >
+              <option value="all">전체</option>
+              <option value="official_past_exam">공식 기출</option>
+              <option value="adapted_past_exam">기출 변형</option>
+              <option value="generated">AI 생성</option>
+              <option value="generated_current_affairs">AI 생성 · 최신개정</option>
+            </select>
+          </label>
+          <label className="field">
+            기출 연도
+            <select
+              value={sourceYear}
+              onChange={(e) => {
+                setSourceYear(e.target.value);
+                setLimit(PAGE_SIZE);
+              }}
+              disabled={sourceYears.length === 0}
+            >
+              <option value="all">전체 연도</option>
+              {sourceYears.map((year) => (
+                <option key={year} value={year}>
+                  {year}년 기출
                 </option>
               ))}
             </select>
