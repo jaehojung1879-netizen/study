@@ -102,7 +102,7 @@ export function SourceBadge({ question }: { question: Question }): JSX.Element {
       : null;
   return (
     <>
-      <span className={`badge ${meta.tone}`}>{meta.text}</span>
+      <span className={`badge ${meta.tone}`}>{badgeText}</span>
       {detail ? <span className="badge">{detail}</span> : null}
       {question.verified ? <span className="badge badge--ok">검증됨</span> : null}
       {question.needsReview ? <span className="badge badge--bad">검토 필요</span> : null}
