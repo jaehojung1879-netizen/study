@@ -110,6 +110,23 @@ export function ExplanationBody({ question, index, selected }: ExplanationBodyPr
         </div>
       ) : null}
 
+      {question.sourceReference ? (
+        <div className="explain__block">
+          <div className="explain__label">출처</div>
+          <p className="explain__body">{question.sourceTitle ?? question.sourceReference}</p>
+          <p className="explain__body">
+            <a href={question.sourceReference} target="_blank" rel="noreferrer">
+              원문 확인
+            </a>
+          </p>
+          {question.sourceType === 'official_past_exam' ? (
+            <p className="tiny faint">
+              한국산업인력공단 Q-Net 공개문제 · 공공누리 제1유형(출처표시)
+            </p>
+          ) : null}
+        </div>
+      ) : null}
+
       {question.conceptIds.length ? (
         <div className="explain__block">
           <div className="explain__label">관련 개념 — 눌러서 개념노트 열기</div>
