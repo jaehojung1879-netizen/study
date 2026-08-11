@@ -90,15 +90,19 @@ const SOURCE_LABEL: Record<SourceType, { text: string; tone: string }> = {
 export function SourceBadge({ question }: { question: Question }): JSX.Element {
   const meta = SOURCE_LABEL[question.sourceType] ?? SOURCE_LABEL.generated;
   const official = question.sourceType === 'official_past_exam' || question.sourceType === 'adapted_past_exam';
+  const badgeText =
+    question.sourceExamYear && question.sourceType === 'official_past_exam'
+      ? `${question.sourceExamYear}년 기출`
+      : question.sourceExamYear && question.sourceType === 'adapted_past_exam'
+        ? `${question.sourceExamYear}년 기출 변형`
+        : meta.text;
   const detail =
-    official && question.sourceExamYear && question.sourceExamRound
-      ? `${question.sourceExamYear} 제${question.sourceExamRound}회${
-          question.sourceQuestionNumber ? ` Q${question.sourceQuestionNumber}` : ''
-        }`
+    official && question.sourceExamRound
+      ? `제${question.sourceExamRound}회${question.sourceQuestionNumber ? ` Q${question.sourceQuestionNumber}` : ''}`
       : null;
   return (
     <>
-      <span className={`badge ${meta.tone}`}>{meta.text}</span>
+      <span className={`badge ${meta.tone}`}>{badgeText}</span>
       {detail ? <span className="badge">{detail}</span> : null}
       {question.verified ? <span className="badge badge--ok">검증됨</span> : null}
       {question.needsReview ? <span className="badge badge--bad">검토 필요</span> : null}

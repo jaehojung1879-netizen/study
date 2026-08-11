@@ -1,0 +1,268 @@
+[
+  {
+    "id": "off-2025-res-001",
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "majorTopicId": "res-intro",
+    "minorTopicId": "res-intro-features",
+    "conceptIds": [
+      "c-natural-features"
+    ],
+    "question": "다음에서 설명하고 있는 토지의 자연적 특성은?",
+    "passage": "○ 최유효이용의 근거가 된다.\n○ 지대 또는 지가를 발생시킨다.\n○ 토지이용을 집약화시킨다.\n○ 물리적으로 생산할 수 없다.",
+    "choices": [
+      "부증성",
+      "인접성",
+      "개별성",
+      "영속성",
+      "적재성"
+    ],
+    "answer": 0,
+    "explanation": "토지는 물리적으로 생산하거나 절대량을 늘릴 수 없다는 부증성을 가진다. 이 때문에 물리적 공급이 제한되어 희소성과 지대·지가가 발생하고, 한정된 토지를 집약적으로 이용하며 최유효이용을 찾게 된다.",
+    "choiceExplanations": [
+      "옳다. 물리적 공급 불가능, 희소성, 지대 발생, 집약적 이용은 모두 부증성에서 직접 파생된다.",
+      "인접성은 토지가 서로 연결되어 외부효과와 협동적 이용이 생기는 성질이므로 제시문과 다르다.",
+      "개별성은 토지마다 위치와 물리적 조건이 달라 완전한 대체가 어렵다는 성질이므로 제시문과 다르다.",
+      "영속성은 토지가 물리적으로 소모되지 않고 장기간 존속한다는 성질이므로 생산 불가능과는 구별된다.",
+      "적재성은 이 문항에서 묻는 토지의 대표적인 자연적 특성 분류에 해당하지 않는다."
+    ],
+    "memoryTip": "부증성 = 물리적 공급 고정 → 희소성·지가·집약적 이용",
+    "trap": "영속성의 '소모되지 않음'과 부증성의 '생산할 수 없음'을 구별한다.",
+    "difficulty": 2,
+    "questionType": "concept",
+    "sourceType": "official_past_exam",
+    "sourceExamYear": 2025,
+    "sourceExamRound": 36,
+    "sourceQuestionNumber": 1,
+    "sourceTitle": "2025년 제36회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5247125&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11"
+  },
+  {
+    "id": "off-2025-res-004",
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "majorTopicId": "res-intro",
+    "minorTopicId": "res-intro-concept",
+    "conceptIds": [
+      "c-land-classification"
+    ],
+    "question": "부동산 용어에 관한 설명으로 옳은 것을 모두 고른 것은?",
+    "passage": "ㄱ. 주거용·상업용·공업용으로 이용되고 있거나 해당 용도로 이용할 목적으로 조성된 토지는 택지(宅地)에 해당한다.\nㄴ. 토지의 현황을 조사하고 측량해서 토지의 소재, 지목, 지번, 경계 또는 좌표를 지적공부에 등록하는 단위가 되는 일정한 토지를 획지(劃地)라 한다.\nㄷ. 용도상 불가분의 관계에 있는 2필지 이상의 일단의 토지를 일단지(一團地)라 한다.\nㄹ. 소유권이 인정되지 않는 바다와 육지 사이의 해변 토지를 포락지(浦落地)라 한다.\nㅁ. 택지지역·농지지역·산지(임지)지역 상호 간에 다른 지역으로 전환되고 있는 지역의 토지는 후보지(候補地)에 해당한다.",
+    "choices": [
+      "ㄱ, ㄴ",
+      "ㄱ, ㄹ",
+      "ㄱ, ㄷ, ㅁ",
+      "ㄴ, ㄷ, ㅁ",
+      "ㄴ, ㄹ, ㅁ"
+    ],
+    "answer": 2,
+    "explanation": "ㄱ의 택지, ㄷ의 일단지, ㅁ의 후보지 설명은 옳다. ㄴ에서 지적공부의 등록단위는 획지가 아니라 필지이고, ㄹ에서 소유권이 인정되지 않는 해변 토지는 포락지가 아니라 빈지이다.",
+    "choiceExplanations": [
+      "ㄱ은 옳지만 ㄴ이 틀리다. 지적공부에 등록하는 법률상 단위는 필지이다.",
+      "ㄱ은 옳지만 ㄹ이 틀리다. 소유권이 인정되지 않는 해변 토지는 빈지이다.",
+      "옳다. ㄱ의 택지, ㄷ의 일단지, ㅁ의 후보지 설명이 모두 정확하다.",
+      "ㄷ과 ㅁ은 옳지만 ㄴ이 틀리므로 정답 조합이 될 수 없다.",
+      "ㅁ은 옳지만 ㄴ과 ㄹ이 모두 틀리므로 정답 조합이 될 수 없다."
+    ],
+    "memoryTip": "필지=등록단위, 획지=경제적 이용단위 / 빈지=소유권 없음",
+    "trap": "필지와 획지, 빈지와 포락지를 서로 바꾼 선지를 조심한다.",
+    "difficulty": 3,
+    "questionType": "count",
+    "sourceType": "official_past_exam",
+    "sourceExamYear": 2025,
+    "sourceExamRound": 36,
+    "sourceQuestionNumber": 4,
+    "sourceTitle": "2025년 제36회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5247125&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11"
+  },
+  {
+    "id": "off-2025-res-005",
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "majorTopicId": "res-development",
+    "minorTopicId": "res-dev-marketing",
+    "conceptIds": [
+      "c-marketing-strategy",
+      "c-stp-4p"
+    ],
+    "question": "부동산마케팅에 관한 설명으로 틀린 것은?",
+    "choices": [
+      "4P Mix전략에서 4P는 제품(Product), 가격(Price), 유통경로(Place), 판매촉진(Promotion)을 말한다.",
+      "관계 마케팅전략은 고객과 공급자의 관계를 일회적이 아닌 지속적인 관계로 유지함으로써 마케팅효과를 도모하는 전략이다.",
+      "고객점유 마케팅전략에서 AIDA는 주의(Attention), 관심(Interest), 욕구(Desire), 행동(Action)의 과정을 의미한다.",
+      "STP전략에서 STP는 시장세분화(Segmentation), 표적시장 선정(Targeting), 동반자관계(Partnership)로 구성된다.",
+      "STP전략에서 시장세분화는 부동산시장에서 마케팅활동을 수행하기 위하여 고객의 집단을 세분하는 것이다."
+    ],
+    "answer": 3,
+    "explanation": "STP는 시장세분화(Segmentation), 표적시장 선정(Targeting), 포지셔닝(Positioning)으로 구성된다. 제시된 동반자관계(Partnership)는 STP의 P가 아니므로 ④가 틀린 설명이다.",
+    "choiceExplanations": [
+      "옳다. 4P는 Product, Price, Place, Promotion의 네 가지 마케팅 믹스 요소이다.",
+      "옳다. 관계 마케팅은 일회성 거래보다 고객과의 장기적 관계 유지에 초점을 둔다.",
+      "옳다. AIDA는 주의, 관심, 욕구, 행동으로 이어지는 고객 반응 과정을 뜻한다.",
+      "틀렸다. STP의 P는 Partnership이 아니라 시장에서의 위치를 정하는 Positioning이다.",
+      "옳다. 시장세분화는 유사한 특성을 가진 고객 집단으로 시장을 나누는 과정이다."
+    ],
+    "memoryTip": "STP = Segmentation → Targeting → Positioning",
+    "trap": "P를 Partnership으로 바꾼 선지가 자주 출제된다.",
+    "difficulty": 2,
+    "questionType": "concept",
+    "sourceType": "official_past_exam",
+    "sourceExamYear": 2025,
+    "sourceExamRound": 36,
+    "sourceQuestionNumber": 5,
+    "sourceTitle": "2025년 제36회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5247125&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11"
+  },
+  {
+    "id": "off-2025-res-006",
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "majorTopicId": "res-economics",
+    "minorTopicId": "res-eco-demand-supply",
+    "conceptIds": [
+      "c-demand-law",
+      "c-supply"
+    ],
+    "question": "부동산 수요와 공급의 변화에 관한 설명으로 틀린 것은? (단, X축은 수량, Y축은 가격, 수요곡선은 우하향, 공급곡선은 우상향하며, 다른 조건은 동일함)",
+    "choices": [
+      "담보대출금리의 인하는 부동산의 수요곡선을 우측(우상향)으로 이동하게 한다.",
+      "건축자재 가격의 하락은 부동산의 공급곡선을 우측(우하향)으로 이동하게 한다.",
+      "대체재 가격의 상승은 해당 부동산의 수요곡선을 좌측(좌하향)으로 이동하게 한다.",
+      "공급자에 대한 보조금 지급은 부동산의 공급곡선을 우측(우하향)으로 이동하게 한다.",
+      "보완재 가격의 하락은 해당 부동산의 수요곡선을 우측(우상향)으로 이동하게 한다."
+    ],
+    "answer": 2,
+    "explanation": "대체재 가격이 상승하면 상대적으로 저렴해진 해당 부동산으로 수요가 이동하므로 수요곡선은 우측으로 이동한다. 좌측으로 이동한다고 한 ③이 틀린 설명이다.",
+    "choiceExplanations": [
+      "옳다. 대출금리 하락은 자금조달비용을 낮춰 부동산 수요를 늘린다.",
+      "옳다. 건축자재 가격 하락은 생산비를 낮춰 공급을 증가시키므로 공급곡선이 우측으로 이동한다.",
+      "틀렸다. 대체재 가격 상승은 해당 부동산의 수요를 늘려 수요곡선을 우측으로 이동시킨다.",
+      "옳다. 공급자 보조금은 공급비용을 낮추므로 공급곡선을 우측으로 이동시킨다.",
+      "옳다. 보완재 가격 하락은 함께 소비되는 해당 부동산의 수요를 증가시킨다."
+    ],
+    "memoryTip": "대체재 가격 상승 → 내 수요 증가 / 보완재 가격 하락 → 내 수요 증가",
+    "trap": "관련재 가격 변화의 방향을 반대로 읽지 않도록 수요자 입장에서 판단한다.",
+    "difficulty": 3,
+    "questionType": "concept",
+    "sourceType": "official_past_exam",
+    "sourceExamYear": 2025,
+    "sourceExamRound": 36,
+    "sourceQuestionNumber": 6,
+    "sourceTitle": "2025년 제36회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5247125&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11"
+  },
+  {
+    "id": "off-2025-civ-041",
+    "examId": "real-estate-agent-1",
+    "subjectId": "civil-law",
+    "majorTopicId": "civ-general",
+    "minorTopicId": "civ-gen-juristic-act",
+    "conceptIds": [
+      "c-antisocial"
+    ],
+    "question": "반사회질서의 법률행위에 관한 설명으로 틀린 것은? (다툼이 있으면 판례에 따름)",
+    "choices": [
+      "반사회질서의 법률행위인지 여부는 법률행위가 이루어진 때를 기준으로 판단한다.",
+      "반사회질서의 법률행위의 무효는 선의의 제3자에게 대항할 수 없다.",
+      "수사기관에 허위진술을 해주는 대가로 금전을 지급받기로 하는 약정은 반사회질서의 법률행위이다.",
+      "법률행위의 성립과정에 단지 강박이라는 불법적 방법이 사용된 데 불과한 때에는 반사회질서의 법률행위라고 할 수 없다.",
+      "상대방에게 표시된 법률행위의 동기가 반사회질서적인 경우, 그 법률행위는 무효이다."
+    ],
+    "answer": 1,
+    "explanation": "민법 제103조 위반의 무효는 절대적 무효이므로 선의의 제3자에게도 대항할 수 있다. 대항할 수 없다고 한 ②가 틀린 설명이다.",
+    "choiceExplanations": [
+      "옳다. 반사회질서성은 원칙적으로 법률행위가 이루어진 당시를 기준으로 판단한다.",
+      "틀렸다. 제103조 위반은 절대적 무효이므로 선의의 제3자에게도 그 무효를 주장할 수 있다.",
+      "옳다. 수사기관에 허위진술을 하는 대가의 약정은 사회질서에 반하여 무효이다.",
+      "옳다. 성립과정에서 강박이 사용됐다는 사정만으로 곧바로 제103조 위반이 되는 것은 아니다.",
+      "옳다. 반사회질서적 동기가 상대방에게 표시되거나 알려진 경우 법률행위 내용으로 평가되어 무효가 될 수 있다."
+    ],
+    "memoryTip": "제103조 위반 = 절대적 무효 = 선의의 제3자도 보호되지 않음",
+    "trap": "통정허위표시의 제3자 보호와 반사회질서 행위의 절대적 무효를 섞지 않는다.",
+    "difficulty": 4,
+    "questionType": "precedent",
+    "sourceType": "official_past_exam",
+    "sourceExamYear": 2025,
+    "sourceExamRound": 36,
+    "sourceQuestionNumber": 41,
+    "sourceTitle": "2025년 제36회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5247125&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제103조"
+      }
+    ],
+    "lawAsOf": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11"
+  },
+  {
+    "id": "off-2025-civ-042",
+    "examId": "real-estate-agent-1",
+    "subjectId": "civil-law",
+    "majorTopicId": "civ-general",
+    "minorTopicId": "civ-gen-declaration",
+    "conceptIds": [
+      "c-fictitious",
+      "c-third-party-bona-fide"
+    ],
+    "question": "통정허위표시를 기초로 새로운 법률상 이해관계를 맺은 제3자에 해당하는 자를 모두 고른 것은? (다툼이 있으면 판례에 따름)",
+    "passage": "ㄱ. 가장채권을 가압류한 자\nㄴ. 파산선고를 받은 가장채권자의 파산관재인\nㄷ. 가장소비대차의 계약상 지위를 이전받은 자",
+    "choices": [
+      "ㄱ",
+      "ㄷ",
+      "ㄱ, ㄴ",
+      "ㄴ, ㄷ",
+      "ㄱ, ㄴ, ㄷ"
+    ],
+    "answer": 2,
+    "explanation": "가장채권을 가압류한 자와 가장채권자의 파산관재인은 허위표시를 기초로 새로운 법률상 이해관계를 맺은 제3자에 해당한다. 가장소비대차의 계약상 지위를 이전받은 자는 여기서 말하는 제3자에 해당하지 않는다.",
+    "choiceExplanations": [
+      "ㄱ만 고른 조합은 부족하다. 가장채권자의 파산관재인인 ㄴ도 제3자에 해당한다.",
+      "ㄷ은 제108조 제2항에서 보호하는 제3자에 해당하지 않으므로 오답 조합이다.",
+      "옳다. ㄱ의 가압류권자와 ㄴ의 파산관재인이 새로운 법률상 이해관계를 취득한 제3자이다.",
+      "ㄴ은 맞지만 ㄷ이 틀리고, 제3자에 해당하는 ㄱ이 빠져 있으므로 오답이다.",
+      "ㄱ과 ㄴ은 맞지만 ㄷ이 틀리므로 모두를 고른 조합은 정답이 아니다."
+    ],
+    "memoryTip": "허위표시 제3자: 가장채권 가압류권자·파산관재인은 포함",
+    "trap": "단순한 계약상 지위 이전을 언제나 제108조의 제3자로 보면 안 된다.",
+    "difficulty": 4,
+    "questionType": "precedent",
+    "sourceType": "official_past_exam",
+    "sourceExamYear": 2025,
+    "sourceExamRound": 36,
+    "sourceQuestionNumber": 42,
+    "sourceTitle": "2025년 제36회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5247125&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "lawReferences": [
+      {
+        "law": "민법",
+        "article": "제108조"
+      }
+    ],
+    "lawAsOf": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11"
+  }
+]

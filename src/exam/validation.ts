@@ -142,7 +142,12 @@ export function validateQuestionBank(
     // Knowing the answer is not the same as knowing why the other four fail,
     // so every choice gets its own line.
     if (!q.choiceExplanations?.length) {
-      push('warning', q.id, 'choice-explanations', '선지별 해설이 없어 오답 리뷰에서 정답 선지만 설명됩니다.');
+      push(
+        q.sourceType === 'official_past_exam' ? 'error' : 'warning',
+        q.id,
+        'choice-explanations',
+        '선지별 해설이 없어 오답 리뷰에서 정답 선지만 설명됩니다.',
+      );
     } else if (q.choiceExplanations.length !== (q.choices?.length ?? 0)) {
       push(
         'error',

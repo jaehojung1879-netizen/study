@@ -239,7 +239,9 @@ function dueCandidates(
       const sb = stateByQuestion.get(b.id)!;
       // Most overdue first, but confident-wrong items jump the queue.
       const riskDelta = Number(sb.riskFlagged) - Number(sa.riskFlagged);
-      return riskDelta !== 0 ? riskDelta : sa.dueAt - sb.dueAt;
+      if (riskDelta !== 0) return riskDelta;
+      const dueDelta = sa.dueAt - sb.dueAt;
+      return dueDelta !== 0 ? dueDelta : sourcePriority(b) - sourcePriority(a);
     });
 }
 
@@ -259,6 +261,9 @@ function weaknessWeight(
   } else {
     weight *= 1.2;
   }
+  // When two questions drill the same weakness, real exam evidence is more
+  // valuable than a generated approximation. User history still stays primary.
+  weight *= q.sourceType === 'official_past_exam' ? 1.4 : q.sourceType === 'adapted_past_exam' ? 1.15 : 1;
   return weight;
 }
 
@@ -291,7 +296,9 @@ function recentWrongVariants(
   );
   const sampled = weightedSample(
     variants,
-    (q) => q.conceptIds.reduce((sum, c) => sum + (conceptScores.get(c) ?? 0), 0),
+    (q) =>
+      q.conceptIds.reduce((sum, c) => sum + (conceptScores.get(c) ?? 0), 0) *
+      (q.sourceType === 'official_past_exam' ? 1.4 : 1),
     variants.length,
     rng,
   );
@@ -312,7 +319,11 @@ function coverageCandidates(
   return shuffle(
     pool.filter((q) => !taken.has(q.id)),
     rng,
-  ).sort((a, b) => (topicCounts.get(a.minorTopicId) ?? 0) - (topicCounts.get(b.minorTopicId) ?? 0));
+  ).sort((a, b) => {
+    const coverageDelta =
+      (topicCounts.get(a.minorTopicId) ?? 0) - (topicCounts.get(b.minorTopicId) ?? 0);
+    return coverageDelta !== 0 ? coverageDelta : sourcePriority(b) - sourcePriority(a);
+  });
 }
 
 function freshCandidates(
@@ -322,10 +333,22 @@ function freshCandidates(
   rng: Rng,
 ): Question[] {
   const unseen = pool.filter((q) => !taken.has(q.id) && !stateByQuestion.has(q.id));
-  // Items tied to a recent statute/precedent change go first (§6: 최신 법령·판례).
-  return shuffle(unseen, rng).sort(
-    (a, b) => Number(b.sourceType === 'generated_current_affairs') - Number(a.sourceType === 'generated_current_affairs'),
-  );
+  // Official past exams are the default evidence. Current-affairs items only
+  // outrank ordinary generated questions when no official item is available.
+  return shuffle(unseen, rng).sort((a, b) => sourcePriority(b) - sourcePriority(a));
+}
+
+function sourcePriority(question: Question): number {
+  switch (question.sourceType) {
+    case 'official_past_exam':
+      return 3;
+    case 'adapted_past_exam':
+      return 2;
+    case 'generated_current_affairs':
+      return 1;
+    default:
+      return 0;
+  }
 }
 
 function lastSeen(q: Question, stateByQuestion: Map<string, QuestionState>): number {

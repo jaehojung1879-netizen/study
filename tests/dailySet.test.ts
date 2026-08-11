@@ -133,6 +133,28 @@ describe('buildDailySet', () => {
     expect(build([], [], 'salt-1').questionIds).not.toEqual(other);
   });
 
+  it('fills a new learner set with official past exams before generated questions', () => {
+    const perSubject = new Map<string, number>();
+    const questions = makeBank().map((q) => {
+      const count = perSubject.get(q.subjectId) ?? 0;
+      perSubject.set(q.subjectId, count + 1);
+      return count < 5
+        ? { ...q, sourceType: 'official_past_exam' as const, verified: true }
+        : q;
+    });
+    const set = buildDailySet({
+      config: testConfig,
+      questions,
+      states: [],
+      attempts: [],
+      subjectStats: statsFor([]),
+      now: NOW,
+      salt: 'official-first',
+    });
+    const byId = new Map(questions.map((q) => [q.id, q]));
+    expect(set.questionIds.every((id) => byId.get(id)?.sourceType === 'official_past_exam')).toBe(true);
+  });
+
   it('never repeats a question inside one set while the bank is large enough', () => {
     const ids = build().questionIds;
     expect(new Set(ids).size).toBe(ids.length);
