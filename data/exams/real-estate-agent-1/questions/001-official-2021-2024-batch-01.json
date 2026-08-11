@@ -1,0 +1,532 @@
+[
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2024,
+    "sourceExamRound": 35,
+    "sourceQuestionNumber": 1,
+    "sourceTitle": "2024년 제35회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5214724&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2024-res-001",
+    "majorTopicId": "res-intro",
+    "minorTopicId": "res-intro-features",
+    "conceptIds": [
+      "c-natural-features",
+      "c-human-features"
+    ],
+    "question": "토지의 특성에 관한 설명으로 옳은 것은?",
+    "choices": [
+      "부동성으로 인해 외부효과가 발생하지 않는다.",
+      "개별성으로 인해 거래사례를 통한 지가 산정이 쉽다.",
+      "부증성으로 인해 토지의 물리적 공급은 단기적으로 탄력적이다.",
+      "용도의 다양성으로 인해 토지의 경제적 공급은 증가할 수 있다.",
+      "영속성으로 인해 부동산활동에서 토지는 감가상각을 고려하여야 한다."
+    ],
+    "answer": 3,
+    "explanation": "토지는 물리적 총량을 늘리기 어렵지만 용도를 전환하거나 이용 강도를 높이면 특정 용도로 이용 가능한 경제적 공급은 증가할 수 있다. 따라서 용도의 다양성을 설명한 ④가 옳다.",
+    "choiceExplanations": [
+      "틀렸다. 부동성 때문에 주변 환경의 변화가 토지가치에 미치는 외부효과가 오히려 크게 나타난다.",
+      "틀렸다. 개별성은 토지마다 조건이 달라 완전한 비교와 대체를 어렵게 하므로 거래사례 비교를 어렵게 한다.",
+      "틀렸다. 부증성 때문에 토지의 물리적 공급은 단기뿐 아니라 원칙적으로 완전비탄력적이다.",
+      "옳다. 물리적 공급과 달리 용도전환·이용집약화를 통한 경제적 공급은 늘어날 수 있다.",
+      "틀렸다. 영속성 때문에 토지 자체에는 물리적 감가상각을 적용하지 않는다."
+    ],
+    "memoryTip": "물리적 공급은 고정, 경제적 공급은 용도전환으로 증가 가능",
+    "trap": "부증성과 용도의 다양성을 물리적 공급과 경제적 공급으로 구분한다.",
+    "difficulty": 2,
+    "questionType": "concept"
+  },
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2024,
+    "sourceExamRound": 35,
+    "sourceQuestionNumber": 2,
+    "sourceTitle": "2024년 제35회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5214724&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2024-res-002",
+    "majorTopicId": "res-intro",
+    "minorTopicId": "res-intro-concept",
+    "conceptIds": [
+      "c-land-classification"
+    ],
+    "question": "토지에 관련된 용어이다. ( )에 들어갈 내용으로 옳은 것은?",
+    "passage": "(ㄱ): 지적제도의 용어로서, 토지의 주된 용도에 따라 토지의 종류를 구분하여 지적공부에 등록한 것\n(ㄴ): 지가공시제도의 용어로서, 토지에 건물이나 그 밖의 정착물이 없고 지상권 등 토지의 사용·수익을 제한하는 사법상의 권리가 설정되어 있지 아니한 토지",
+    "choices": [
+      "ㄱ: 필지, ㄴ: 소지",
+      "ㄱ: 지목, ㄴ: 나지",
+      "ㄱ: 필지, ㄴ: 나지",
+      "ㄱ: 지목, ㄴ: 나대지",
+      "ㄱ: 필지, ㄴ: 나대지"
+    ],
+    "answer": 1,
+    "explanation": "토지의 주된 용도에 따라 지적공부에 등록하는 종류는 지목이고, 정착물과 사용·수익 제한권리가 없는 토지는 나지이다. 따라서 ㄱ은 지목, ㄴ은 나지인 ②가 옳다.",
+    "choiceExplanations": [
+      "필지는 하나의 지번이 붙는 지적공부의 등록단위이므로 ㄱ에 맞지 않고, 소지도 ㄴ의 정의가 아니다.",
+      "옳다. ㄱ은 지목, ㄴ은 나지의 정확한 정의이다.",
+      "나지는 맞지만 ㄱ은 필지가 아니라 지목이므로 틀렸다.",
+      "지목은 맞지만 나대지는 건축물이 없는 대지를 뜻하는 용어로서 제시된 나지의 정의와 다르다.",
+      "ㄱ과 ㄴ이 모두 제시된 정의와 맞지 않는다."
+    ],
+    "memoryTip": "지목=주된 용도별 종류, 나지=정착물·사용제한권리 없음",
+    "trap": "필지·지목과 나지·나대지를 서로 바꾼 조합을 조심한다.",
+    "difficulty": 2,
+    "questionType": "concept"
+  },
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2024,
+    "sourceExamRound": 35,
+    "sourceQuestionNumber": 5,
+    "sourceTitle": "2024년 제35회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5214724&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2024-res-005",
+    "majorTopicId": "res-development",
+    "minorTopicId": "res-dev-development",
+    "conceptIds": [
+      "c-dev-methods"
+    ],
+    "question": "A광역시장은 관할구역 중 농지 및 야산으로 형성된 일단의 지역에 대해 도시개발법령상 도시개발사업(개발 후 용도: 주거용 및 상업용 택지)을 추진하면서 시행방식을 검토하고 있다. 수용방식(예정사업시행자: 지방공사)과 환지방식(예정사업시행자: 도시개발사업조합)을 비교한 설명으로 틀린 것은? (단, 보상금은 현금으로 지급하며, 주어진 조건에 한함)",
+    "choices": [
+      "수용방식은 환지방식에 비해 세금감면을 받기 위한 대토(代土)로 인해 도시개발구역 밖의 지가를 상승시킬 가능성이 크다.",
+      "수용방식은 환지방식에 비해 사업시행자의 개발토지(조성토지) 매각부담이 크다.",
+      "사업시행자의 사업비부담에 있어 환지방식은 수용방식에 비해 작다.",
+      "사업으로 인해 개발이익이 발생하는 경우, 환지방식은 수용방식에 비해 종전 토지소유자에게 귀속될 가능성이 크다.",
+      "개발절차상 환지방식은 토지소유자의 동의를 받아야 하는 단계(횟수)가 수용방식에 비해 적어 절차가 간단하다."
+    ],
+    "answer": 4,
+    "explanation": "환지방식은 종전 토지소유자의 권리조정과 동의가 중요한 방식이어서 수용방식보다 이해관계 조정 절차가 복잡하다. 동의 단계가 적어 절차가 간단하다고 한 ⑤가 틀리다.",
+    "choiceExplanations": [
+      "옳다. 현금보상을 받은 소유자의 대토 수요가 개발구역 밖 토지가격을 끌어올릴 가능성은 수용방식에서 더 크다.",
+      "옳다. 수용방식의 시행자는 보상비를 먼저 부담하고 조성토지를 매각해 사업비를 회수하므로 매각부담이 크다.",
+      "옳다. 환지방식은 토지를 전면 매수하지 않아 사업시행자의 초기 토지매입·보상비 부담이 상대적으로 작다.",
+      "옳다. 환지방식에서는 종전 소유자가 환지를 통해 사업 후 토지를 배분받아 개발이익을 공유할 가능성이 크다.",
+      "틀렸다. 환지방식은 토지소유자 중심의 권리조정과 동의 절차 때문에 일반적으로 수용방식보다 절차가 복잡하다."
+    ],
+    "memoryTip": "수용=현금보상·매각부담, 환지=권리조정·소유자 개발이익",
+    "trap": "환지방식의 낮은 초기 사업비와 절차의 단순성을 같은 것으로 오해하지 않는다.",
+    "difficulty": 4,
+    "questionType": "case"
+  },
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2023,
+    "sourceExamRound": 34,
+    "sourceQuestionNumber": 1,
+    "sourceTitle": "2023년 제34회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5212459&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2023-res-001",
+    "majorTopicId": "res-intro",
+    "minorTopicId": "res-intro-features",
+    "conceptIds": [
+      "c-natural-features",
+      "c-human-features"
+    ],
+    "question": "토지의 특성에 관한 설명으로 틀린 것은?",
+    "choices": [
+      "용도의 다양성으로 인해 두 개 이상의 용도가 동시에 경합할 수 없고 용도의 전환 및 합병·분할을 어렵게 한다.",
+      "부증성으로 인해 토지의 물리적 공급이 어려우므로 토지이용의 집약화가 요구된다.",
+      "부동성으로 인해 주변 환경의 변화에 따른 외부효과가 나타날 수 있다.",
+      "영속성으로 인해 재화의 소모를 전제로 하는 재생산이론과 물리적 감가상각이 적용되지 않는다.",
+      "개별성으로 인해 토지별 완전한 대체 관계가 제약된다."
+    ],
+    "answer": 0,
+    "explanation": "용도의 다양성은 여러 용도가 경쟁할 수 있게 하고 용도전환·합병·분할의 가능성을 높이는 인문적 특성이다. 이를 불가능하거나 어렵게 한다고 한 ①이 틀리다.",
+    "choiceExplanations": [
+      "틀렸다. 용도의 다양성 때문에 복수 용도가 경합하고, 용도전환이나 합병·분할을 통한 이용이 가능해진다.",
+      "옳다. 부증성으로 물리적 공급을 늘릴 수 없어 한정된 토지를 집약적으로 이용하게 된다.",
+      "옳다. 부동성으로 주변의 교통·환경 변화가 해당 토지가치에 외부효과를 준다.",
+      "옳다. 영속적인 토지는 물리적으로 소모되는 재화와 달라 토지 자체에 재생산이론과 물리적 감가상각을 적용하지 않는다.",
+      "옳다. 개별성 때문에 동일한 토지가 없어 완전한 대체관계가 성립하기 어렵다."
+    ],
+    "memoryTip": "용도의 다양성은 경합·전환·합병·분할을 가능하게 한다.",
+    "trap": "용도의 다양성의 효과를 반대로 서술한 선지를 찾는다.",
+    "difficulty": 2,
+    "questionType": "concept"
+  },
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2023,
+    "sourceExamRound": 34,
+    "sourceQuestionNumber": 4,
+    "sourceTitle": "2023년 제34회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5212459&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2023-res-004",
+    "majorTopicId": "res-economics",
+    "minorTopicId": "res-eco-demand-supply",
+    "conceptIds": [
+      "c-demand-law"
+    ],
+    "question": "해당 부동산시장의 수요곡선을 우측(우상향)으로 이동하게 하는 수요변화의 요인에 해당하는 것은? (단, 수요곡선은 우하향하고, 해당 부동산은 정상재이며, 다른 조건은 동일함)",
+    "choices": [
+      "대출금리의 상승",
+      "보완재 가격의 하락",
+      "대체재 수요량의 증가",
+      "해당 부동산 가격의 상승",
+      "해당 부동산 선호도의 감소"
+    ],
+    "answer": 1,
+    "explanation": "보완재 가격이 하락하면 보완재 소비가 늘면서 함께 이용되는 해당 부동산의 수요도 증가한다. 따라서 수요곡선을 우측으로 이동시키는 것은 ②이다.",
+    "choiceExplanations": [
+      "대출금리 상승은 자금조달비용을 높여 부동산 수요를 감소시키므로 수요곡선을 좌측으로 이동시킨다.",
+      "옳다. 보완재 가격 하락은 해당 부동산에 대한 수요를 증가시켜 수요곡선을 우측으로 이동시킨다.",
+      "대체재의 수요량 증가는 해당 부동산으로부터 수요가 이동한 결과일 수 있어 해당 부동산 수요 증가 요인이 아니다.",
+      "해당 부동산 자체 가격의 상승은 수요곡선 위에서 수요량을 감소시키는 변화이지 수요곡선 자체의 이동이 아니다.",
+      "선호도 감소는 해당 부동산 수요를 줄여 수요곡선을 좌측으로 이동시킨다."
+    ],
+    "memoryTip": "보완재 가격 하락 → 함께 쓰는 내 재화 수요 증가",
+    "trap": "자체 가격 변화는 곡선상의 이동이고 관련재·선호 변화는 곡선 자체의 이동이다.",
+    "difficulty": 3,
+    "questionType": "concept"
+  },
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2023,
+    "sourceExamRound": 34,
+    "sourceQuestionNumber": 5,
+    "sourceTitle": "2023년 제34회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5212459&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2023-res-005",
+    "majorTopicId": "res-economics",
+    "minorTopicId": "res-eco-cycle",
+    "conceptIds": [
+      "c-cobweb"
+    ],
+    "question": "거미집모형에 관한 설명으로 옳은 것은? (단, 다른 조건은 동일함)",
+    "choices": [
+      "수요의 가격탄력성이 공급의 가격탄력성보다 크면 발산형이다.",
+      "가격이 변동하면 수요와 공급은 모두 즉각적으로 반응한다는 가정을 전제하고 있다.",
+      "수요곡선의 기울기 절댓값이 공급곡선의 기울기 절댓값보다 작으면 수렴형이다.",
+      "수요와 공급의 동시적 관계로 가정하여 균형의 변화를 정태적으로 분석한 모형이다.",
+      "공급자는 현재와 미래의 가격을 동시에 고려해 미래의 공급을 결정한다는 가정을 전제하고 있다."
+    ],
+    "answer": 2,
+    "explanation": "가격을 세로축에 둔 경우 수요곡선의 기울기 절댓값이 공급곡선보다 작으면 가격변동 폭이 점차 줄어 균형으로 수렴한다. 따라서 ③이 옳다.",
+    "choiceExplanations": [
+      "틀렸다. 수요의 가격탄력성이 공급보다 크면 수렴형에 해당하며, 그 반대이면 발산형이 된다.",
+      "틀렸다. 거미집모형은 수요는 현재 가격에 즉시 반응하지만 공급은 전기의 가격에 시차를 두고 반응한다고 본다.",
+      "옳다. 수요곡선이 공급곡선보다 완만하면 가격변동이 축소되어 수렴한다.",
+      "틀렸다. 공급의 시차를 전제로 균형으로의 조정과정을 동태적으로 분석하는 모형이다.",
+      "틀렸다. 공급자는 미래가격을 완전예측하는 것이 아니라 전기의 가격이 계속될 것이라는 정태적 기대를 바탕으로 공급을 결정한다."
+    ],
+    "memoryTip": "수요곡선이 더 완만하면 수렴, 공급곡선이 더 완만하면 발산",
+    "trap": "기울기 조건과 탄력성 조건은 역수 관계이므로 같은 문장처럼 읽지 않는다.",
+    "difficulty": 4,
+    "questionType": "concept"
+  },
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2022,
+    "sourceExamRound": 33,
+    "sourceQuestionNumber": 3,
+    "sourceTitle": "2022년 제33회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5211107&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2022-res-003",
+    "majorTopicId": "res-intro",
+    "minorTopicId": "res-intro-concept",
+    "conceptIds": [
+      "c-land-classification"
+    ],
+    "question": "토지는 사용하는 상황이나 관계에 따라 다양하게 불리는 바, 토지 관련 용어의 설명으로 틀린 것은?",
+    "choices": [
+      "도시개발사업에 소요된 비용과 공공용지를 제외한 후 도시개발사업 전 토지의 위치·지목·면적 등을 고려하여 토지소유자에게 재분배하는 토지를 환지(換地)라 한다.",
+      "토지와 도로 등 경계 사이의 경사진 부분의 토지를 법지(法地)라 한다.",
+      "고압송전선로 아래의 토지를 선하지(線下地)라 한다.",
+      "소유권이 인정되지 않는 바다와 육지 사이의 해변 토지를 포락지(浦落地)라 한다.",
+      "도시개발사업에 필요한 경비에 충당하기 위해 환지로 정하지 아니한 토지를 체비지(替費地)라 한다."
+    ],
+    "answer": 3,
+    "explanation": "소유권이 인정되지 않는 바다와 육지 사이의 해변 토지는 빈지이다. 포락지는 지반이 절토되거나 침식되어 수면 아래로 잠긴 토지를 뜻하므로 ④가 틀리다.",
+    "choiceExplanations": [
+      "옳다. 환지는 사업 후 종전 토지의 위치·지목·면적 등을 고려해 토지소유자에게 다시 배분하는 토지이다.",
+      "옳다. 법지는 택지와 도로 등의 경계에 있는 경사진 토지를 말한다.",
+      "옳다. 선하지는 고압송전선로 아래에 위치하여 이용제약을 받는 토지이다.",
+      "틀렸다. 소유권이 인정되지 않는 해변 토지는 빈지이고, 포락지는 물에 침식되어 수면 아래로 잠긴 토지이다.",
+      "옳다. 체비지는 사업비 충당 등을 위해 환지로 지정하지 않고 시행자가 처분하는 토지이다."
+    ],
+    "memoryTip": "빈지=소유권 없는 해변, 포락지=물에 잠긴 토지",
+    "trap": "빈지와 포락지를 바꿔 쓰는 선지가 반복 출제된다.",
+    "difficulty": 3,
+    "questionType": "concept"
+  },
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2022,
+    "sourceExamRound": 33,
+    "sourceQuestionNumber": 4,
+    "sourceTitle": "2022년 제33회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5211107&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2022-res-004",
+    "majorTopicId": "res-economics",
+    "minorTopicId": "res-eco-demand-supply",
+    "conceptIds": [
+      "c-supply"
+    ],
+    "question": "신규주택시장에서 공급을 감소시키는 요인을 모두 고른 것은? (단, 신규주택은 정상재이며, 다른 조건은 동일함)",
+    "passage": "ㄱ. 주택가격의 하락 기대\nㄴ. 주택건설업체 수의 감소\nㄷ. 주택건설용 토지의 가격 하락\nㄹ. 주택건설에 대한 정부 보조금 축소\nㅁ. 주택건설기술 개발에 따른 원가절감",
+    "choices": [
+      "ㄱ, ㄴ",
+      "ㄴ, ㄹ",
+      "ㄷ, ㅁ",
+      "ㄱ, ㄴ, ㄹ",
+      "ㄴ, ㄹ, ㅁ"
+    ],
+    "answer": 3,
+    "explanation": "가격 하락 기대, 건설업체 수 감소, 정부 보조금 축소는 신규주택 공급을 감소시킨다. 반면 토지가격 하락과 기술개발에 따른 원가절감은 공급을 증가시키므로 ㄱ·ㄴ·ㄹ인 ④가 옳다.",
+    "choiceExplanations": [
+      "ㄱ과 ㄴ은 공급 감소 요인이지만 보조금 축소인 ㄹ도 빠져 있어 불완전하다.",
+      "ㄴ과 ㄹ은 맞지만 가격 하락 기대인 ㄱ이 빠져 있어 불완전하다.",
+      "ㄷ과 ㅁ은 생산비를 낮춰 공급을 증가시키는 요인이므로 반대 조합이다.",
+      "옳다. ㄱ·ㄴ·ㄹ은 모두 신규주택 공급을 감소시킨다.",
+      "ㄴ과 ㄹ은 맞지만 원가절감인 ㅁ은 공급 증가 요인이므로 틀린 조합이다."
+    ],
+    "memoryTip": "공급 감소: 가격하락 기대·업체 감소·보조금 축소",
+    "trap": "토지가격 하락과 기술개발은 비용을 낮추므로 공급 감소가 아니라 증가이다.",
+    "difficulty": 3,
+    "questionType": "count"
+  },
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2022,
+    "sourceExamRound": 33,
+    "sourceQuestionNumber": 5,
+    "sourceTitle": "2022년 제33회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5211107&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2022-res-005",
+    "majorTopicId": "res-economics",
+    "minorTopicId": "res-eco-elasticity",
+    "conceptIds": [
+      "c-price-elasticity",
+      "c-income-cross-elasticity"
+    ],
+    "question": "오피스텔 시장에서 수요의 가격탄력성은 0.5이고, 오피스텔의 대체재인 아파트 가격에 대한 오피스텔 수요의 교차탄력성은 0.3이다. 오피스텔 가격, 오피스텔 수요자의 소득, 아파트 가격이 각각 5%씩 상승함에 따른 오피스텔 전체 수요량의 변화율이 1%라고 하면, 오피스텔 수요의 소득탄력성은? (단, 오피스텔과 아파트 모두 정상재이고, 수요의 가격탄력성은 절댓값으로 나타내며, 다른 조건은 동일함)",
+    "choices": [
+      "0.2",
+      "0.4",
+      "0.6",
+      "0.8",
+      "1.0"
+    ],
+    "answer": 1,
+    "explanation": "오피스텔 가격 상승 효과는 -0.5×5%=-2.5%, 아파트 가격 상승 효과는 +0.3×5%=+1.5%이다. 전체가 +1%이려면 소득 상승 효과가 +2%여야 하므로 소득탄력성은 2%÷5%=0.4이다.",
+    "choiceExplanations": [
+      "소득탄력성이 0.2이면 소득효과는 +1%이고 전체 변화는 -2.5%+1.5%+1%=0%가 되어 조건과 다르다.",
+      "옳다. 소득효과 +2%를 만들기 위한 소득탄력성은 0.4이다.",
+      "소득탄력성이 0.6이면 소득효과가 +3%여서 전체 수요량 변화율은 +2%가 된다.",
+      "소득탄력성이 0.8이면 소득효과가 +4%여서 전체 수요량 변화율은 +3%가 된다.",
+      "소득탄력성이 1.0이면 소득효과가 +5%여서 전체 수요량 변화율은 +4%가 된다."
+    ],
+    "calculationSteps": [
+      {
+        "label": "자체 가격 효과",
+        "detail": "-0.5 × 5% = -2.5%"
+      },
+      {
+        "label": "대체재 가격 효과",
+        "detail": "+0.3 × 5% = +1.5%"
+      },
+      {
+        "label": "필요한 소득 효과",
+        "detail": "전체 +1% - (-2.5% + 1.5%) = +2%"
+      },
+      {
+        "label": "소득탄력성",
+        "detail": "+2% ÷ 5% = 0.4"
+      }
+    ],
+    "memoryTip": "전체 수요변화 = 자체가격효과 + 소득효과 + 교차가격효과",
+    "trap": "수요의 가격탄력성은 절댓값으로 주어졌으므로 자체 가격 상승 효과에는 음(-)의 부호를 붙인다.",
+    "difficulty": 4,
+    "questionType": "calculation"
+  },
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2021,
+    "sourceExamRound": 32,
+    "sourceQuestionNumber": 1,
+    "sourceTitle": "2021년 제32회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5209170&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2021-res-001",
+    "majorTopicId": "res-intro",
+    "minorTopicId": "res-intro-concept",
+    "conceptIds": [
+      "c-land-classification"
+    ],
+    "question": "토지 관련 용어의 설명으로 틀린 것은?",
+    "choices": [
+      "택지지역 내에서 주거지역이 상업지역으로 용도변경이 진행되고 있는 토지를 이행지라 한다.",
+      "필지는 하나의 지번이 부여된 토지의 등록단위이다.",
+      "획지는 인위적·자연적·행정적 조건에 따라 다른 토지와 구별되는 가격수준이 비슷한 일단의 토지를 말한다.",
+      "나지는 건부지 중 건폐율·용적률의 제한으로 건물을 짓지 않고 남겨둔 토지를 말한다.",
+      "맹지는 도로에 직접 연결되지 않은 토지이다."
+    ],
+    "answer": 3,
+    "explanation": "나지는 지상에 건물이나 정착물이 없고 토지의 사용·수익을 제한하는 사법상 권리가 설정되지 않은 토지이다. 건부지에서 건폐율·용적률 제한 때문에 남겨둔 부분은 공지이므로 ④가 틀리다.",
+    "choiceExplanations": [
+      "옳다. 같은 택지지역 안에서 주거·상업·공업지역 등 용도가 전환 중인 토지는 이행지이다.",
+      "옳다. 필지는 하나의 지번이 부여되는 지적공부의 법률상 등록단위이다.",
+      "옳다. 획지는 가격수준이 비슷해 경제적으로 하나의 단위로 보는 일단의 토지이다.",
+      "틀렸다. 건부지 중 건폐율·용적률 제한으로 남은 토지는 공지이며, 나지는 정착물과 사용제한권리가 없는 토지이다.",
+      "옳다. 맹지는 도로와 직접 접하지 않아 출입에 제약이 있는 토지이다."
+    ],
+    "memoryTip": "나지=건물·제한권리 없음, 공지=건부지에서 비워 둔 부분",
+    "trap": "나지와 공지의 정의를 바꾼 선지를 조심한다.",
+    "difficulty": 2,
+    "questionType": "concept"
+  },
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2021,
+    "sourceExamRound": 32,
+    "sourceQuestionNumber": 4,
+    "sourceTitle": "2021년 제32회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5209170&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2021-res-004",
+    "majorTopicId": "res-economics",
+    "minorTopicId": "res-eco-elasticity",
+    "conceptIds": [
+      "c-price-elasticity",
+      "c-income-cross-elasticity"
+    ],
+    "question": "아파트 매매가격이 10% 상승할 때, 아파트 매매수요량이 5% 감소하고 오피스텔 매매수요량이 8% 증가하였다. 이때 아파트 매매수요의 가격탄력성의 정도(A), 오피스텔 매매수요의 교차탄력성(B), 아파트에 대한 오피스텔의 관계(C)는? (단, 수요의 가격탄력성은 절댓값이며, 다른 조건은 동일함)",
+    "choices": [
+      "A: 비탄력적, B: 0.5, C: 대체재",
+      "A: 탄력적, B: 0.5, C: 보완재",
+      "A: 비탄력적, B: 0.8, C: 대체재",
+      "A: 탄력적, B: 0.8, C: 보완재",
+      "A: 비탄력적, B: 1.0, C: 대체재"
+    ],
+    "answer": 2,
+    "explanation": "아파트 수요의 가격탄력성은 5%÷10%=0.5로 비탄력적이다. 오피스텔 수요의 교차탄력성은 8%÷10%=0.8이고 양(+)이므로 두 재화는 대체재이다. 따라서 ③이 옳다.",
+    "choiceExplanations": [
+      "가격탄력성 0.5와 대체재 판단은 맞지만 교차탄력성은 0.5가 아니라 0.8이다.",
+      "가격탄력성은 1보다 작아 비탄력적이고 교차탄력성은 0.8이며 양(+)이므로 보완재가 아니다.",
+      "옳다. A는 비탄력적, B는 0.8, C는 대체재이다.",
+      "교차탄력성 0.8은 맞지만 A는 탄력적이 아니라 비탄력적이고 C는 보완재가 아니라 대체재이다.",
+      "A와 C는 맞지만 교차탄력성은 1.0이 아니라 0.8이다."
+    ],
+    "calculationSteps": [
+      {
+        "label": "가격탄력성",
+        "detail": "|수요량 변화율 -5%| ÷ 가격 변화율 10% = 0.5 → 비탄력적"
+      },
+      {
+        "label": "교차탄력성",
+        "detail": "오피스텔 수요량 변화율 8% ÷ 아파트 가격 변화율 10% = +0.8"
+      },
+      {
+        "label": "재화 관계",
+        "detail": "교차탄력성이 양(+)이므로 대체재"
+      }
+    ],
+    "memoryTip": "교차탄력성 양(+)은 대체재, 음(-)은 보완재",
+    "trap": "Q-Net A형 최종정답은 ③이다. 비공식 문제은행의 오표기를 따르지 않는다.",
+    "difficulty": 3,
+    "questionType": "calculation"
+  },
+  {
+    "examId": "real-estate-agent-1",
+    "subjectId": "real-estate-studies",
+    "sourceType": "official_past_exam",
+    "verified": true,
+    "verifiedAt": "2026-08-11",
+    "createdAt": "2026-08-11",
+    "updatedAt": "2026-08-11",
+    "sourceExamYear": 2021,
+    "sourceExamRound": 32,
+    "sourceQuestionNumber": 5,
+    "sourceTitle": "2021년 제32회 공인중개사 자격시험 1차 1교시",
+    "sourceReference": "https://www.q-net.or.kr/cst003.do?artlSeq=5209170&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309",
+    "id": "off-2021-res-005",
+    "majorTopicId": "res-economics",
+    "minorTopicId": "res-eco-demand-supply",
+    "conceptIds": [
+      "c-equilibrium"
+    ],
+    "question": "수요와 공급이 동시에 변화할 경우, 균형가격과 균형량에 관한 설명으로 옳은 것은? (단, 수요곡선은 우하향, 공급곡선은 우상향, 다른 조건은 동일함)",
+    "choices": [
+      "수요와 공급이 증가하는 경우, 수요의 증가폭이 공급의 증가폭보다 크다면 균형가격은 상승하고 균형량은 감소한다.",
+      "수요와 공급이 감소하는 경우, 수요의 감소폭이 공급의 감소폭보다 작다면 균형가격은 상승하고 균형량은 증가한다.",
+      "수요와 공급이 감소하는 경우, 수요의 감소폭과 공급의 감소폭이 같다면 균형가격은 불변이고 균형량은 증가한다.",
+      "수요는 증가하고 공급이 감소하는 경우, 수요의 증가폭이 공급의 감소폭보다 작다면 균형가격은 상승하고 균형량은 증가한다.",
+      "수요는 감소하고 공급이 증가하는 경우, 수요의 감소폭이 공급의 증가폭보다 작다면 균형가격은 하락하고 균형량은 증가한다."
+    ],
+    "answer": 4,
+    "explanation": "수요 감소는 가격과 수량을 낮추고, 공급 증가는 가격을 낮추면서 수량을 높인다. 두 변화 모두 가격을 낮추며 공급 증가폭이 수요 감소폭보다 크면 균형량은 증가하므로 ⑤가 옳다.",
+    "choiceExplanations": [
+      "수요와 공급이 모두 증가하면 균형량은 반드시 증가한다. 수요 증가폭이 더 크면 가격은 상승하지만 수량이 감소한다는 부분이 틀렸다.",
+      "수요와 공급이 모두 감소하면 균형량은 반드시 감소한다. 공급 감소폭이 더 크면 가격은 상승하지만 수량이 증가하지 않는다.",
+      "두 곡선이 같은 폭으로 감소하면 가격은 불변일 수 있으나 균형량은 증가가 아니라 감소한다.",
+      "수요 증가와 공급 감소는 가격을 올리지만 공급 감소폭이 더 크면 균형량은 감소하므로 수량 증가가 틀렸다.",
+      "옳다. 수요 감소와 공급 증가는 가격을 낮추고, 공급 증가폭이 더 크면 균형량은 증가한다."
+    ],
+    "memoryTip": "같은 방향 이동은 수량 방향 확정, 반대 방향 이동은 가격 방향 확정",
+    "trap": "두 곡선이 동시에 움직일 때 확정되는 변수와 변화폭에 따라 결정되는 변수를 나눠 판단한다.",
+    "difficulty": 4,
+    "questionType": "concept"
+  }
+]
