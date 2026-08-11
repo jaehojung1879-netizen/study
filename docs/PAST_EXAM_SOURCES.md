@@ -15,7 +15,10 @@
 | 연도·회차 | 문제지 | 최종정답 | 상태 |
 | --- | --- | --- | --- |
 | 2025년 제36회 | [Q-Net 시험문제지](https://www.q-net.or.kr/cst003.do?artlSeq=5247125&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309) | [Q-Net 최종정답](https://www.q-net.or.kr/cst003.do?artlSeq=5249925&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00310) | 공공누리 제1유형 확인 |
-| 2024년 제35회 이하 | [Q-Net 기출문제 내려받기](https://www.q-net.or.kr/cst003.do?id=cst00302&gSite=L&gId=08&menuType=cst00309) | [Q-Net 최종정답](https://www.q-net.or.kr/cst003.do?id=cst00302&gSite=L&gId=08&menuType=cst00310) | 회차별 공공누리 표시 확인 후 순차 수집 |
+| 2024년 제35회 | [Q-Net 시험문제지](https://www.q-net.or.kr/cst003.do?artlSeq=5214724&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309) | [Q-Net 최종정답](https://www.q-net.or.kr/cst003.do?artlSeq=5218527&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00310) | 문제·정답 PDF 대조, 3문항 반입 |
+| 2023년 제34회 | [Q-Net 시험문제지](https://www.q-net.or.kr/cst003.do?artlSeq=5212459&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309) | [Q-Net 최종정답](https://www.q-net.or.kr/cst003.do?artlSeq=5212816&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00310) | 문제·정답 PDF 대조, 3문항 반입 |
+| 2022년 제33회 | [Q-Net 시험문제지](https://www.q-net.or.kr/cst003.do?artlSeq=5211107&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309) | [Q-Net 최종정답](https://www.q-net.or.kr/cst003.do?artlSeq=5211208&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00310) | 문제·정답 PDF 대조, 3문항 반입 |
+| 2021년 제32회 | [Q-Net 시험문제지](https://www.q-net.or.kr/cst003.do?artlSeq=5209170&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00309) | [Q-Net 최종정답](https://www.q-net.or.kr/cst003.do?artlSeq=5209538&boardId=Q004&gId=08&gSite=L&id=cst00302&menuType=cst00310) | 문제·정답 PDF 대조, 3문항 반입 |
 
 Q-Net에서 2020년 제31회, 2018년 제29회, 2013년 제24회, 2011년 제22회, 2005년 제15회 추가시험 문제지까지 공개된 것을 확인했다. 수집 순서는 최신 회차부터 과거로 내려가며, 제1차의 부동산학개론 40문항과 민법 및 민사특별법 40문항을 한 회차 80문항 단위로 반입한다.
 
@@ -43,7 +46,8 @@ Q-Net에서 2020년 제31회, 2018년 제29회, 2013년 제24회, 2011년 제22�
 4. 모든 문항에 회차·문항번호·Q-Net URL·공공누리 출처문구를 저장한다.
 5. 해설은 국가법령정보센터·대법원 판례와 기존 개념노트를 바탕으로 새로 작성한다.
 6. 랜드퀴즈·EBS·학원·블로그에서 누락과 쟁점을 교차검증하되, 별도 재사용 허락이 없는 자체 해설은 가져오지 않는다.
-7. 한 회차 80문항이 검증을 통과하면 다음 과거 회차로 내려간다.
+7. 2021~2025년 시드 문항을 유지하면서 최신 회차부터 연도별 80문항으로 확장한다.
+8. 공식 기출에 선지별 해설이 하나라도 빠지면 CI 오류로 처리한다.
 
 ## 완료 기준
 
