@@ -31,12 +31,22 @@ export function PracticePage(): JSX.Element {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const startDrill = async (kind: 'weakness' | 'calculation' | 'risky'): Promise<void> => {
+  const startDrill = async (kind: 'official' | 'weakness' | 'calculation' | 'risky'): Promise<void> => {
     setBusy(true);
     try {
       let questions = [];
       let summary = '';
-      if (kind === 'calculation') {
+      if (kind === 'official') {
+        questions = study.index.questions
+          .filter((q) => q.sourceType === 'official_past_exam' && q.verified && !q.needsReview)
+          .sort(
+            (a, b) =>
+              (b.sourceExamYear ?? 0) - (a.sourceExamYear ?? 0) ||
+              (a.sourceQuestionNumber ?? 0) - (b.sourceQuestionNumber ?? 0),
+          );
+        const years = [...new Set(questions.flatMap((q) => (q.sourceExamYear ? [q.sourceExamYear] : [])))];
+        summary = `${years.length > 0 ? `${years.join('·')}년 ` : ''}공식 기출 집중 연습`;
+      } else if (kind === 'calculation') {
         questions = study.index.questions.filter((q) => q.questionType === 'calculation');
         summary = '계산문제 집중 연습';
       } else if (kind === 'risky') {
@@ -146,6 +156,19 @@ export function PracticePage(): JSX.Element {
       <section>
         <SectionTitle title="집중 연습" aside="오늘 세트와 별도로 진행됩니다" />
         <div className="stack">
+          <button
+            type="button"
+            className="btn btn--block"
+            disabled={
+              busy ||
+              !study.index.questions.some(
+                (q) => q.sourceType === 'official_past_exam' && q.verified && !q.needsReview,
+              )
+            }
+            onClick={() => void startDrill('official')}
+          >
+            공식 기출만 풀기 (최신 연도 우선)
+          </button>
           <button
             type="button"
             className="btn btn--block"
