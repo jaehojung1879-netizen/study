@@ -38,6 +38,16 @@ export interface DailySetInput {
   totalOverride?: number | null;
 }
 
+/** Why today's set is shorter than the configured goal, when it is. */
+export interface DailySetCap {
+  /** What was asked for (setting, or `config.daily.totalQuestions`). */
+  requested: number;
+  /** What the bank can sustain without recycling. */
+  sustainable: number;
+  /** How many more questions the bank needs to serve `requested` in full. */
+  questionsNeeded: number;
+}
+
 export interface DailySetResult {
   questionIds: string[];
   /** Bucket that produced each id, parallel to `questionIds`. */
@@ -47,10 +57,51 @@ export interface DailySetResult {
   phase: StudyPhase;
   mix: SelectionMix;
   planSummary: string;
+  /** Set when the bank was too small to serve the requested total. */
+  cap?: DailySetCap;
 }
 
 /** Window for "recently got this wrong". */
 const RECENT_WRONG_WINDOW_DAYS = 7;
+
+/**
+ * Largest share of a subject's pool one day may draw before the set stops
+ * feeling new (§6).
+ *
+ * Repetition is arithmetic, not a scheduling bug: drawing N of a pool of P
+ * forces at least 2N − P items to repeat the next day. Simulated against the
+ * shipped bank, day-over-day overlap sits near 30% up to ~40% of the pool and
+ * then climbs steeply — 68% of the pool produced 63% overlap. The residual 30%
+ * is the spaced-repetition system legitimately bringing back missed items,
+ * which is the point of the app; everything above it is the same question
+ * arriving because there was nothing else to send.
+ */
+export const MAX_POOL_FRACTION_PER_DAY = 0.4;
+
+/**
+ * The largest daily total this bank can sustain without recycling.
+ *
+ * Returns `config.daily.totalQuestions` once the bank is big enough, so this
+ * cap disappears on its own as questions are added — no setting to remember to
+ * put back.
+ */
+export function sustainableDailyTotal(config: ExamConfig, questions: Question[]): number {
+  const usable = questions.filter((q) => !q.needsReview);
+  const goal = config.daily.totalQuestions;
+  const shares = allocatePerSubject(config, goal);
+
+  let limit = Number.POSITIVE_INFINITY;
+  for (const subject of config.subjects) {
+    const share = shares[subject.id] ?? 0;
+    if (share <= 0) continue;
+    const pool = usable.filter((q) => q.subjectId === subject.id).length;
+    const perSubjectCap = Math.floor(pool * MAX_POOL_FRACTION_PER_DAY);
+    // Scale the whole day by this subject's headroom, so the 50:50 split holds.
+    limit = Math.min(limit, (perSubjectCap / share) * goal);
+  }
+  if (!Number.isFinite(limit)) return goal;
+  return Math.max(config.subjects.length, Math.min(goal, Math.floor(limit)));
+}
 
 export function buildDailySet(input: DailySetInput): DailySetResult {
   const { config, questions, states, attempts, now, salt } = input;
@@ -59,7 +110,21 @@ export function buildDailySet(input: DailySetInput): DailySetResult {
 
   const stateByQuestion = new Map(states.map((s) => [s.questionId, s]));
   const weights = conceptWeights(input.subjectStats);
-  const totalTarget = input.totalOverride ?? config.daily.totalQuestions;
+
+  // A goal larger than the bank can serve does not produce more learning — it
+  // produces the same questions again. Cap it, and report the cap so the UI can
+  // say why rather than leaving the user to notice the repeats themselves.
+  const requested = input.totalOverride ?? config.daily.totalQuestions;
+  const sustainable = sustainableDailyTotal(config, questions);
+  const totalTarget = Math.min(requested, sustainable);
+  const cap: DailySetCap | undefined =
+    totalTarget < requested
+      ? {
+          requested,
+          sustainable: totalTarget,
+          questionsNeeded: questionsNeededForGoal(config, questions, requested),
+        }
+      : undefined;
 
   // Per-subject targets keep the 50:50 balance the spec asks for even when one
   // subject is far weaker; the weakness weighting happens *inside* each subject.
@@ -107,7 +172,27 @@ export function buildDailySet(input: DailySetInput): DailySetResult {
     phase,
     mix,
     planSummary: describePlan(breakdown, phase),
+    cap,
   };
+}
+
+/** How many questions the bank still needs to serve `requested` in full. */
+export function questionsNeededForGoal(
+  config: ExamConfig,
+  questions: Question[],
+  requested: number,
+): number {
+  const usable = questions.filter((q) => !q.needsReview);
+  const shares = allocatePerSubject(config, requested);
+  let missing = 0;
+  for (const subject of config.subjects) {
+    const share = shares[subject.id] ?? 0;
+    if (share <= 0) continue;
+    const pool = usable.filter((q) => q.subjectId === subject.id).length;
+    const needed = Math.ceil(share / MAX_POOL_FRACTION_PER_DAY);
+    missing += Math.max(0, needed - pool);
+  }
+  return missing;
 }
 
 interface SubjectSelectionInput {

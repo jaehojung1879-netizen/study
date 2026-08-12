@@ -3,7 +3,11 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStudy } from '../../app/StudyProvider';
 import { Banner, ProgressBar, SectionTitle, Stat } from '../../components/ui';
-import { BUCKET_LABELS, type SelectionBucket } from '../../learning/scheduler/dailySet';
+import {
+  BUCKET_LABELS,
+  questionsNeededForGoal,
+  type SelectionBucket,
+} from '../../learning/scheduler/dailySet';
 import type { PracticeSession } from '../../storage/types';
 import { createCustomSession, ensureTodaySession } from './sessions';
 
@@ -72,6 +76,16 @@ export function PracticePage(): JSX.Element {
 
   return (
     <div className="stack-lg">
+      {study.dailyGoal < study.requestedDailyGoal ? (
+        <Banner tone="warn">
+          목표는 하루 {study.requestedDailyGoal}문제지만 문제은행이 {study.index.questions.length}
+          문항뿐이라 오늘 세트를 {study.dailyGoal}문항으로 줄였습니다. 더 늘리면 어제 푼 문제가 그대로
+          다시 나옵니다. 목표대로 {study.requestedDailyGoal}문제를 반복 없이 풀려면 문항이{' '}
+          {questionsNeededForGoal(study.index.config, study.index.questions, study.requestedDailyGoal)}개 더
+          필요합니다.
+        </Banner>
+      ) : null}
+
       <section>
         <div className="card">
           <div className="row row--between">
