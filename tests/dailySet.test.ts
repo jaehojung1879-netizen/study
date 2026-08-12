@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { allocatePerSubject, buildDailySet, distribute } from '../src/learning/scheduler/dailySet';
+import {
+  allocatePerSubject,
+  buildDailySet,
+  distribute,
+  questionsNeededForGoal,
+  sustainableDailyTotal,
+} from '../src/learning/scheduler/dailySet';
 import { buildTopicTree } from '../src/learning/analytics/stats';
 import { currentPhase, effectiveMix } from '../src/learning/scheduler/phase';
 import { rankWeaknesses } from '../src/learning/analytics/weakness';
@@ -8,7 +14,12 @@ import { makeAttempt, makeQuestion, makeState, testConfig, testTaxonomy } from '
 
 const NOW = Date.UTC(2026, 5, 1); // ~213 days before the test exam date
 
-/** 20 questions per subject, spread across the taxonomy. */
+/**
+ * 20 questions per subject, spread across the taxonomy.
+ *
+ * Comfortably above the daily draw (5 per subject) so these tests exercise
+ * selection, not the small-bank cap — that has its own describe block.
+ */
 function makeBank() {
   const bank = [];
   for (let i = 0; i < 10; i += 1) {
@@ -33,6 +44,15 @@ function makeBank() {
     bank.push(
       makeQuestion({
         id: `b-${i}`,
+        subjectId: 'subject-b',
+        majorTopicId: 'major-b',
+        minorTopicId: 'minor-b',
+        conceptIds: ['concept-b'],
+      }),
+    );
+    bank.push(
+      makeQuestion({
+        id: `b2-${i}`,
         subjectId: 'subject-b',
         majorTopicId: 'major-b',
         minorTopicId: 'minor-b',
@@ -200,7 +220,8 @@ describe('buildDailySet', () => {
 
   it('alternates subjects instead of grouping them', () => {
     const set = build();
-    const subjects = set.questionIds.map((id) => (id.startsWith('b-') ? 'b' : 'a'));
+    const bySubject = new Map(makeBank().map((q) => [q.id, q.subjectId]));
+    const subjects = set.questionIds.map((id) => bySubject.get(id));
     // Round-robin means no run of three from the same subject.
     let longestRun = 1;
     let run = 1;
@@ -240,7 +261,10 @@ describe('buildDailySet', () => {
     expect(set.breakdown.fresh).toBe(0);
   });
 
-  it('recycles the oldest items rather than shipping a short set', () => {
+  it('ships a short set rather than handing back the same question twice', () => {
+    // The bank cannot fill the goal. Padding it out would mean repeating items
+    // inside a single sitting, which is the failure this whole cap exists to
+    // prevent — a short, honest set beats a padded one.
     const tinyBank = [
       makeQuestion({ id: 'only-a', subjectId: 'subject-a', minorTopicId: 'minor-a' }),
       makeQuestion({ id: 'only-b', subjectId: 'subject-b', minorTopicId: 'minor-b' }),
@@ -254,7 +278,10 @@ describe('buildDailySet', () => {
       now: NOW,
       salt: 'salt',
     });
-    expect(set.questionIds).toHaveLength(testConfig.daily.totalQuestions);
+    expect(set.questionIds.length).toBeLessThan(testConfig.daily.totalQuestions);
+    expect(new Set(set.questionIds).size).toBe(set.questionIds.length);
+    // And it must not be silent about it.
+    expect(set.cap?.questionsNeeded).toBeGreaterThan(0);
   });
 
   it('respects an explicit daily goal override', () => {
@@ -269,6 +296,82 @@ describe('buildDailySet', () => {
       totalOverride: 6,
     });
     expect(set.questionIds).toHaveLength(6);
+  });
+});
+
+describe('daily goal vs bank size', () => {
+  /** `count` questions per subject, all in the same minor topic. */
+  const bankOfSize = (count: number) =>
+    ['subject-a', 'subject-b'].flatMap((subjectId) =>
+      Array.from({ length: count }, (_, i) =>
+        makeQuestion({
+          id: `${subjectId}-${i}`,
+          subjectId,
+          majorTopicId: subjectId === 'subject-a' ? 'major-a' : 'major-b',
+          minorTopicId: subjectId === 'subject-a' ? 'minor-a' : 'minor-b',
+          conceptIds: [subjectId === 'subject-a' ? 'concept-a' : 'concept-b'],
+        }),
+      ),
+    );
+
+  it('leaves the goal alone once the bank is comfortably large', () => {
+    // Goal is 10 (5 per subject); 40 per subject means each day draws 12.5%.
+    expect(sustainableDailyTotal(testConfig, bankOfSize(40))).toBe(testConfig.daily.totalQuestions);
+    expect(questionsNeededForGoal(testConfig, bankOfSize(40), 10)).toBe(0);
+  });
+
+  it('caps the goal when a day would eat too much of the pool', () => {
+    // 5 per subject: a 5-question draw would be the entire pool every day.
+    expect(sustainableDailyTotal(testConfig, bankOfSize(5))).toBeLessThan(10);
+    expect(questionsNeededForGoal(testConfig, bankOfSize(5), 10)).toBeGreaterThan(0);
+  });
+
+  it('builds a shorter set rather than recycling, and says why', () => {
+    const bank = bankOfSize(5);
+    const set = buildDailySet({
+      config: testConfig,
+      questions: bank,
+      states: [],
+      attempts: [],
+      subjectStats: buildTopicTree({
+        attempts: [],
+        states: [],
+        taxonomy: testTaxonomy,
+        subjectNames: { 'subject-a': 'A', 'subject-b': 'B' },
+        now: NOW,
+      }),
+      now: NOW,
+      salt: 'cap',
+    });
+
+    expect(set.questionIds.length).toBeLessThan(testConfig.daily.totalQuestions);
+    // No question appears twice — the recycling path must not be reached.
+    expect(new Set(set.questionIds).size).toBe(set.questionIds.length);
+    expect(set.cap).toBeDefined();
+    expect(set.cap!.requested).toBe(testConfig.daily.totalQuestions);
+    expect(set.cap!.sustainable).toBe(set.questionIds.length);
+    expect(set.cap!.questionsNeeded).toBeGreaterThan(0);
+  });
+
+  it('reports no cap when the bank can serve the goal', () => {
+    const bank = bankOfSize(40);
+    const set = buildDailySet({
+      config: testConfig,
+      questions: bank,
+      states: [],
+      attempts: [],
+      subjectStats: buildTopicTree({
+        attempts: [],
+        states: [],
+        taxonomy: testTaxonomy,
+        subjectNames: { 'subject-a': 'A', 'subject-b': 'B' },
+        now: NOW,
+      }),
+      now: NOW,
+      salt: 'cap',
+    });
+    expect(set.cap).toBeUndefined();
+    expect(set.questionIds).toHaveLength(testConfig.daily.totalQuestions);
   });
 });
 

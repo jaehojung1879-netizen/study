@@ -37,7 +37,7 @@ import { buildMockTrend, type MockTrend } from '../learning/scoring/mock';
 import { phaseInfo, type PhaseInfo } from '../learning/scheduler/phase';
 import { scheduleNext } from '../learning/spacedRepetition/schedule';
 import { buildRecommendation, type Recommendation } from '../learning/recommendation';
-import type { SelectionBucket } from '../learning/scheduler/dailySet';
+import { sustainableDailyTotal, type SelectionBucket } from '../learning/scheduler/dailySet';
 import { dateKey, daysUntilExam, studyStreak } from '../learning/utils/date';
 
 export interface RecordAttemptInput {
@@ -79,7 +79,10 @@ export interface StudyContextValue {
   flashcards: Flashcard[];
   analytics: Analytics;
   daysLeft: number;
+  /** The goal actually used — clamped to what the question bank can serve. */
   dailyGoal: number;
+  /** What the user asked for, before clamping. Equal to `dailyGoal` when the bank is big enough. */
+  requestedDailyGoal: number;
 
   storage: StudyStorage;
   reload: () => Promise<void>;
@@ -334,7 +337,15 @@ export function StudyProvider({ children }: { children: ReactNode }): JSX.Elemen
     [storage],
   );
 
-  const dailyGoal = settings.dailyGoalOverride ?? index.config.daily.totalQuestions;
+  // The goal the user asked for, and the largest one this bank can serve without
+  // handing back the same questions tomorrow. Every screen shows the second
+  // number so the plan on screen matches the set actually built.
+  const requestedDailyGoal = settings.dailyGoalOverride ?? index.config.daily.totalQuestions;
+  const sustainableGoal = useMemo(
+    () => sustainableDailyTotal(index.config, index.questions),
+    [index],
+  );
+  const dailyGoal = Math.min(requestedDailyGoal, sustainableGoal);
 
   const analytics = useMemo<Analytics>(() => {
     const now = Date.now();
@@ -405,6 +416,7 @@ export function StudyProvider({ children }: { children: ReactNode }): JSX.Elemen
       analytics,
       daysLeft: analytics.phase.daysLeft,
       dailyGoal,
+      requestedDailyGoal,
       storage,
       reload,
       updateSettings,
@@ -430,6 +442,7 @@ export function StudyProvider({ children }: { children: ReactNode }): JSX.Elemen
     flashcards,
     analytics,
     dailyGoal,
+    requestedDailyGoal,
     reload,
     updateSettings,
     recordAttempt,

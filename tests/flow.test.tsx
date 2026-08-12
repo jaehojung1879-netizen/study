@@ -42,7 +42,9 @@ describe('daily practice flow', () => {
 
     // 2. The solving screen shows position, breadcrumb and choices.
     await waitFor(() => expect(router.state.location.pathname).toMatch(/^\/practice\/sess_/));
-    await screen.findByText('1 / 100');
+    // The set is as long as the bank can sustain, not a hardcoded 100.
+    const total = (await storage.listSessions())[0].questionIds.length;
+    await screen.findByText(`1 / ${total}`);
     const choices = await screen.findAllByRole('button', { name: /^[①②③④⑤]/ });
     expect(choices.length).toBeGreaterThanOrEqual(4);
 
@@ -66,7 +68,7 @@ describe('daily practice flow', () => {
 
     // 6. Next question advances the cursor and the session survives it.
     await user.click(screen.getByRole('button', { name: '다음 문제' }));
-    await screen.findByText('2 / 100');
+    await screen.findByText(`2 / ${total}`);
 
     const sessions = await storage.listSessions();
     expect(sessions[0].cursor).toBe(1);
